@@ -24683,9 +24683,9 @@ body.timeline-page .panel-clone {
     padding-top: 10px;
   }
 }
+
 @media (max-width: 815px) {
   #content .panel .panel-body {
-    overflow: hidden !important;
     min-width: 0 !important;
   }
 }
