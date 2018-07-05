@@ -117,7 +117,7 @@
 
 
 									<div class="col-sm-7 br-l br-grey pl00">
-										<div class="panel-body pn" style="overflow-x: hidden;overflow-y: scroll;height: 200px;width: auto;">
+										<div class="panel-body pn" style="overflow-y: scroll; height: 200px; width: auto;">
 											<table class="table mbn tc-med-1 tc-bold-last tc-fs13-last">
 												<thead>
 													<tr class="hidden">
@@ -125,7 +125,7 @@
 														<th>Count</th>
 													</tr>
 												</thead>
-												<tbody style="overflow-y: scroll;overflow-x: hidden;height: 200px;">
+												<tbody style="overflow-y: scroll;height: 200px;">
 <?php  
                             if(is_array($pengumuman)) foreach($pengumuman as $row) 
                               { 
