@@ -126,9 +126,9 @@
 													</tr>
 												</thead>
 												<tbody style="overflow-y: scroll;height: 200px;">
-<?php  
-                            if(is_array($pengumuman)) foreach($pengumuman as $row) 
-                              { 
+<?php
+                            if(is_array($pengumuman)) foreach($pengumuman as $row)
+                              {
 ?>
 													<tr>
                             <td class="visible-md visible-lg">
@@ -137,20 +137,20 @@
                             <td width="70%">
 															<span>
 																<a data-toggle="modal" data-target="#main-modal-lg" data-effect="mfp-zoomOut" href="<?php echo site_url('pengumuman/'.$row->id_pengumuman); ?>" style="text-decoration: none;font-family: Open Sans, Helvetica, Arial, sans-serif;font-size: 13px;color: #39545B;">
-<?php 
+<?php
                                 echo $row->judul;
 ?>
 																</a>
 															</span>
 														</td>
 														<td style="color: #E8BE0C;" width="40%">
-<?php 
-                              echo date('d M Y', strtotime($row->publish_date)); 
-?>                                
+<?php
+                              echo date('d M Y', strtotime($row->publish_date));
+?>
                             </td>
 													</tr>
-<?php 
-                            } 
+<?php
+                            }
 ?>
 												</tbody>
 											</table>

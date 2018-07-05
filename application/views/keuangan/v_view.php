@@ -1,8 +1,8 @@
 <div class="admin-panels mn pn">
-	<div class="col-sm-12 admin-grid">
+	<div class="col-xs-12 admin-grid">
 		<!-- Panel with All Options -->
 		<div class="row">
-		<div class="col-md-12 admin-grid">
+		<div class="col-xs-12 admin-grid">
 			<div class="panel sort-disable panel-info" data-panel-color="false" data-panel-title="false" data-panel-remove="false" data-panel-collapse="false">
 			<div class="panel-heading">
 				<span class="panel-icon"><i class="fa fa-money"></i>
@@ -13,11 +13,11 @@
 				<div class="panel sort-disable">
 					<div class="panel-heading">
 						<ul class="nav panel-tabs-border panel-tabs panel-tabs-left">
-							<li class="active"><a href="#tab-tanggungan" data-toggle="tab">Tanggungan</a></li>
-							<li><a href="#tab-pembayaran" data-toggle="tab">Riwayat Pembayaran </a></li>
+							<li class="active fa"><a href="#tab-tanggungan" data-toggle="tab">Tanggungan</a></li>
+							<li class="fa"><a href="#tab-pembayaran" data-toggle="tab">Riwayat Pembayaran </a></li>
 						</ul>
 					</div>
-					<div class="panel-body">   
+					<div class="panel-body" style="overflow-y: scroll; height: 500px; width: auto;">
 						<div class="tab-content pn br-n">
 							<div id="tab-tanggungan" class="tab-pane active">
 								<div class="row">
@@ -33,11 +33,11 @@
 										</thead>
 										<tbody>
 										<?php
-											$i=0; 
+											$i=0;
 											$total = 0;
 											$bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
-											foreach($tagihan as $row) if(strtolower($row->status_tagihan) <> 'lunas' || $row->tanggungan) 
-											{ 
+											foreach($tagihan as $row) if(strtolower($row->status_tagihan) <> 'lunas' || $row->tanggungan)
+											{
 												$total += $row->tanggungan;
 										?>
 										<tr class="danger">
@@ -47,7 +47,7 @@
 											<td class="text-center"><?php echo $row->tipe_jenis == 'per_bulan' ? $bulan[(int)date('m', strtotime($row->periode))].' '.date('Y', strtotime($row->periode)) : $row->periode; ?></td>
 											<td class="text-right">Rp. <?php echo number_format($row->tanggungan,0,',','.'); ?></td>
 										</tr>
-										<?php } ?>	
+										<?php } ?>
 										</tbody>
 										<tfoot>
 											<tr>
@@ -74,10 +74,10 @@
 										</thead>
 										<tbody>
 										<?php
-											$i=0; 
+											$i=0;
 											$total = 0;
 											foreach($pembayaran as $row)
-											{ 
+											{
 												$total += $row->bayar;
 										?>
 										<tr>
@@ -89,7 +89,7 @@
 											<td class="text-center"><?php echo date('d/m/Y', strtotime($row->tgl_bayar)); ?></td>
 											<td class="text-right">Rp. <?php echo number_format($row->bayar,0,',','.'); ?></td>
 										</tr>
-										<?php } ?>	
+										<?php } ?>
 										</tbody>
 										<tfoot>
 											<tr>
@@ -101,15 +101,15 @@
 								</div>
 							</div>
 						</div>
-						
-					</div>  
+
+					</div>
 				</div>
 			</div>
 			</div>
 		</div>
 		</div>
 	</div>
-</div>    
+</div>
 
 
 [section name="plugin-css"]
@@ -118,6 +118,52 @@
 [/section]
 
 [section name="css"]
+<!--
+<style>
+@media only screen and (max-width: 800px) {
+  /* Force table to not be like tables anymore */
+  #no-more-tables table, #no-more-tables thead, #no-more-tables tbody, #no-more-tables th, #no-more-tables td, #no-more-tables tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  #no-more-tables thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  #no-more-tables tr {
+    border: 1px solid #ccc;
+  }
+  #no-more-tables td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: left;
+  }
+  #no-more-tables td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+  /*
+	Label the data
+	*/
+  #no-more-tables td:before {
+    content: attr(data-title);
+  }
+}
+</style>
+-->
 [/section]
 
 [section name="plugin-js"]
@@ -127,4 +173,3 @@
 <script>
 </script>
 [/section]
-
