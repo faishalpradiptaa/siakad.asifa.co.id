@@ -1,0 +1,9 @@
+#topbar{
+	min-height:40px;
+}
+.fc-event-icon {
+	position: absolute !important;
+}
+.fc-event-desc {
+	padding-left: 25px !important;
+}

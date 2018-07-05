@@ -1,0 +1,49 @@
+[06-Sep-2017 14:30:13 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function delete() on null in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php:28
+Stack trace:
+#0 /home/u1303897/public_html/siakad/admin_asifa/application/controllers/keu_nominal.php(132): mod_nominal->setNominal(Array, NULL)
+#1 /home/u1303897/public_html/siakad/admin_asifa/system/core/CodeIgniter.php(359): keu_nominal->form()
+#2 /home/u1303897/public_html/siakad/admin_asifa/index.php(204): require_once('/home/u1303897/...')
+#3 {main}
+  thrown in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php on line 28
+[06-Sep-2017 15:13:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function delete() on null in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php:28
+Stack trace:
+#0 /home/u1303897/public_html/siakad/admin_asifa/application/controllers/keu_nominal.php(132): mod_nominal->setNominal(Array, NULL)
+#1 /home/u1303897/public_html/siakad/admin_asifa/system/core/CodeIgniter.php(359): keu_nominal->form()
+#2 /home/u1303897/public_html/siakad/admin_asifa/index.php(204): require_once('/home/u1303897/...')
+#3 {main}
+  thrown in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php on line 28
+[06-Sep-2017 15:15:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function delete() on null in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php:28
+Stack trace:
+#0 /home/u1303897/public_html/siakad/admin_asifa/application/controllers/keu_nominal.php(132): mod_nominal->setNominal(Array, NULL)
+#1 /home/u1303897/public_html/siakad/admin_asifa/system/core/CodeIgniter.php(359): keu_nominal->form()
+#2 /home/u1303897/public_html/siakad/admin_asifa/index.php(204): require_once('/home/u1303897/...')
+#3 {main}
+  thrown in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php on line 28
+[06-Sep-2017 15:23:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function delete() on null in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php:28
+Stack trace:
+#0 /home/u1303897/public_html/siakad/admin_asifa/application/controllers/keu_nominal.php(132): mod_nominal->setNominal(Array, NULL)
+#1 /home/u1303897/public_html/siakad/admin_asifa/system/core/CodeIgniter.php(359): keu_nominal->form()
+#2 /home/u1303897/public_html/siakad/admin_asifa/index.php(204): require_once('/home/u1303897/...')
+#3 {main}
+  thrown in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php on line 28
+[06-Sep-2017 15:24:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function delete() on null in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php:28
+Stack trace:
+#0 /home/u1303897/public_html/siakad/admin_asifa/application/controllers/keu_nominal.php(132): mod_nominal->setNominal(Array, NULL)
+#1 /home/u1303897/public_html/siakad/admin_asifa/system/core/CodeIgniter.php(359): keu_nominal->form()
+#2 /home/u1303897/public_html/siakad/admin_asifa/index.php(204): require_once('/home/u1303897/...')
+#3 {main}
+  thrown in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php on line 28
+[09-Sep-2017 12:55:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function delete() on null in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php:28
+Stack trace:
+#0 /home/u1303897/public_html/siakad/admin_asifa/application/controllers/keu_nominal.php(132): mod_nominal->setNominal(Array, NULL)
+#1 /home/u1303897/public_html/siakad/admin_asifa/system/core/CodeIgniter.php(359): keu_nominal->form()
+#2 /home/u1303897/public_html/siakad/admin_asifa/index.php(204): require_once('/home/u1303897/...')
+#3 {main}
+  thrown in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php on line 28
+[09-Sep-2017 12:59:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function delete() on null in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php:28
+Stack trace:
+#0 /home/u1303897/public_html/siakad/admin_asifa/application/controllers/keu_nominal.php(132): mod_nominal->setNominal(Array, NULL)
+#1 /home/u1303897/public_html/siakad/admin_asifa/system/core/CodeIgniter.php(359): keu_nominal->form()
+#2 /home/u1303897/public_html/siakad/admin_asifa/index.php(204): require_once('/home/u1303897/...')
+#3 {main}
+  thrown in /home/u1303897/public_html/siakad/admin_asifa/application/models/mod_nominal.php on line 28

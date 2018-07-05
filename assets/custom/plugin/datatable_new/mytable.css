@@ -1,0 +1,74 @@
+.table.dataTable tr.heading > th{
+	background-color: white !important;
+}
+.table.dataTable{
+	border-bottom: none;
+}
+table.dataTable.no-footer{
+	border-bottom: 0px;
+}
+.dataTables_wrapper .dt-buttons{
+	margin-bottom: 10px;
+	float:none;
+}
+
+button.dt-button, div.dt-button, a.dt-button{
+	border: 1px solid transparent;
+	border-radius: 4px;
+	font-size: 13px;
+	line-height: 1.5;
+	padding: 3px 9px;
+	color: #666 !important;
+	background: #fff;
+	border-color: #ccc;
+	box-shadow: none;
+	margin-left: 5px;
+}
+button.dt-button:hover, div.dt-button:hover, a.dt-button:hover{
+	color: #666 !important;
+	border-color: #ccc !important;
+}
+.dataTables_wrapper .dataTables_processing{
+	height: auto;
+	background: white;
+	position: absolute;
+	padding: 10px;
+	z-index: 99;
+	top: 25px;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.5) !important;
+	border: 0px;
+	box-shadow: none;
+}
+.dataTables_wrapper .dataTables_processing .my-loading{
+	background: white;
+	display: inline-block;
+	padding: 10px 25px;
+	margin: 20px auto;
+}
+.dataTables_wrapper .table tbody tr.active td,
+.dataTables_wrapper .table tbody tr.active th {
+	background-color: #08C;
+	color: white;
+}
+.dataTables_wrapper .table tbody tr td,
+.dataTables_wrapper .table thead tr th{
+	font-size: 12px;
+}
+.dataTables_wrapper .table tbody tr:last-child td{
+	border-bottom: 1px solid #ddd;
+}
+
+table.dataTable>tbody>tr.child ul.dropdown-menu{
+	display:none;
+}
+table.dataTable>tfoot.filter{
+	display: table-header-group;
+}
+table.dataTable>tfoot.filter td,table.dataTable>tfoot.filter th{
+	border-top-color: #ddd;
+}
+
+table.dataTable>thead td,table.dataTable>thead th{
+	border-bottom-color: #ddd;
+}

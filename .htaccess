@@ -1,0 +1,29 @@
+#php_value  error_reporting  E_ALL
+#php_value  display_errors  ON
+#php_value  display_startup_errors  ON
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	<Files .*>
+		Order Deny,Allow
+		Deny From All
+	</Files>
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond $1 !^(index\.php|assets)
+	RewriteRule ^([^?]*) index.php/$1 [L]
+
+</IfModule>
+
+Options -Indexes
+
+<filesMatch "\.(php|php3|pl|py|jsp|asp|htm|html|xhtml|shtml|sh|cgi)$">
+	Order Deny,Allow
+	Deny from All
+</filesMatch>
+
+<Files index.php>
+	Order Allow,Deny
+	Allow from all
+</Files>

@@ -1,0 +1,40 @@
+@media print{
+	body {
+    font-family: "Calibri","Open Sans", sans-serif;
+    font-size: 12px;
+	}
+	.page-head, .page-title, .page-breadcrumb, .portlet-title, .btn{
+		display: none;
+	}
+	textarea, .IPS-container, .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: 1px solid #000 !important;
+	}
+	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 2px 5px;
+    border-top: 1px solid #000;
+	}
+	
+	.table>thead>tr>td, .table>thead>tr>th {
+    background-color: #e2e2e2!important;
+		font-weight:normal;
+	}
+	
+	.rapor-point h4 {
+    font-size: 13px !important;
+		font-weight: normal !important;
+		margin: 0px 0px 10px 0px !important;
+	}
+	.table {
+    margin-bottom: 0px !important;
+	}
+	.IPS-container{
+		margin-top: 10px;
+	}
+	.rapor-header{
+		@margin-top: -30px;		
+	}
+	
+	
+
+	
+}

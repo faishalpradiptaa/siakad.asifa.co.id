@@ -1,0 +1,16 @@
+<Directory />
+	Order deny,allow
+	Deny from all
+	Allow from 127.0.0.1
+</Directory>
+
+<filesMatch "\.(php|php3|pl|py|jsp|asp|htm|html|xhtml|shtml|sh|cgi)$">
+	Order Deny,Allow
+	Deny from All
+</filesMatch>
+
+Options -Indexes
+SetHandler none
+Options -ExecCGI
+php_flag engine off
+RemoveHandler .cgi .php .php3 .php4 .php5 .phtml .pl .py .pyc .pyo

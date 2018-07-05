@@ -1,0 +1,14 @@
+Options -Indexes
+
+<filesMatch "\.(php|php3|pl|py|jsp|asp|htm|html|xhtml|shtml|sh|cgi)$">
+	Order Deny,Allow
+	Deny from All
+</filesMatch>
+
+<Files api.php>
+	Order Allow,Deny
+	Allow from all
+</Files>
+
+
+
