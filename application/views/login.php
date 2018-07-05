@@ -116,7 +116,7 @@
 
 
 
-									<div class="col-sm-7 br-l br-grey pl30">
+									<div class="col-sm-7 br-l br-grey pl00">
 										<div class="panel-body pn" style="overflow-x: hidden;overflow-y: scroll;height: 200px;width: auto;">
 											<table class="table mbn tc-med-1 tc-bold-last tc-fs13-last">
 												<thead>
@@ -126,19 +126,32 @@
 													</tr>
 												</thead>
 												<tbody style="overflow-y: scroll;overflow-x: hidden;height: 200px;">
-													<?php  if(is_array($pengumuman)) foreach($pengumuman as $row) { ?>
+<?php  
+                            if(is_array($pengumuman)) foreach($pengumuman as $row) 
+                              { 
+?>
 													<tr>
-														<td width="85%">
-															<span class="<?php echo $row->icon; ?> text-alert fs14 mr10"></span>
+                            <td class="visible-md visible-lg">
+                              <span class="<?php echo $row->icon; ?> text-alert fs14 mr10"></span>
+														</td>
+                            <td width="70%">
 															<span>
 																<a data-toggle="modal" data-target="#main-modal-lg" data-effect="mfp-zoomOut" href="<?php echo site_url('pengumuman/'.$row->id_pengumuman); ?>" style="text-decoration: none;font-family: Open Sans, Helvetica, Arial, sans-serif;font-size: 13px;color: #39545B;">
-																<?php echo $row->judul; ?>
+<?php 
+                                echo $row->judul;
+?>
 																</a>
 															</span>
 														</td>
-														<td style="color: #E8BE0C;" width="15%"><?php echo date('d M', strtotime($row->publish_date)); ?></td>
+														<td style="color: #E8BE0C;" width="40%">
+<?php 
+                              echo date('d M Y', strtotime($row->publish_date)); 
+?>                                
+                            </td>
 													</tr>
-													<?php } ?>
+<?php 
+                            } 
+?>
 												</tbody>
 											</table>
 										</div>
