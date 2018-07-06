@@ -64,7 +64,7 @@
 			</ul>
 			<div class="tab-content">
 				<!-- Stats Top Graph Bot -->
-				<div id="tab-identitas"" class="tab-pane active p15">
+				<div id="tab-identitas" class="tab-pane active p15">
 					<div class="panel">
 						<div class="panel-heading">
 							<span class="panel-icon"><i class="glyphicons glyphicons-user"></i>
@@ -133,7 +133,7 @@
 										<th>Telp Ibu</th>
 										<td><?php echo $this->detail_siswa->telp_ibu; ?></td>
 									</tr>
-								
+
 								</tbody>
 							</table>
 						</div>
@@ -141,7 +141,7 @@
 				</div>
 			</div>
 		</div>
-			
+
 	</div>
 
 </div>
@@ -162,4 +162,3 @@
 <script>
 </script>
 [/section]
-

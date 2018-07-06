@@ -1,5 +1,5 @@
 <div class="admin-panels mn pn">
-	<div class="col-xs-12 admin-grid">
+	<div class="admin-grid">
 		<!-- Panel with All Options -->
 		<div class="row">
 		<div class="col-xs-12 admin-grid">
@@ -11,10 +11,10 @@
 			</div>
 			<div class="panel-body">
 				<div class="panel sort-disable">
-					<div class="panel-heading">
-						<ul class="nav panel-tabs-border panel-tabs panel-tabs-left">
-							<li class="active fa"><a href="#tab-tanggungan" data-toggle="tab">Tanggungan</a></li>
-							<li class="fa"><a href="#tab-pembayaran" data-toggle="tab">Riwayat Pembayaran </a></li>
+					<div class="nav">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#tab-tanggungan" data-toggle="tab">Tanggungan</a></li>
+							<li class=""><a href="#tab-pembayaran" data-toggle="tab">Riwayat Pembayaran </a></li>
 						</ul>
 					</div>
 					<div class="panel-body" style="overflow-y: scroll; height: 500px; width: auto;">
@@ -28,7 +28,7 @@
 												<th width="20%" class="text-center">Kode</th>
 												<th>Jenis</th>
 												<th width="15%" class="text-center">Periode</th>
-												<th width="18%" class="text-right">Nominal</th>
+												<th width="25%" class="text-right">Nominal</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -45,14 +45,14 @@
 											<td class="text-center"><?php echo $row->kode_tagihan; ?></td>
 											<td><?php echo $row->nama_jenis; ?></td>
 											<td class="text-center"><?php echo $row->tipe_jenis == 'per_bulan' ? $bulan[(int)date('m', strtotime($row->periode))].' '.date('Y', strtotime($row->periode)) : $row->periode; ?></td>
-											<td class="text-right">Rp. <?php echo number_format($row->tanggungan,0,',','.'); ?></td>
+											<td class="text-right">Rp<?php echo number_format($row->tanggungan,0,',','.'); ?>,00</td>
 										</tr>
 										<?php } ?>
 										</tbody>
 										<tfoot>
 											<tr>
 												<th class="text-right" colspan="4"><b>Total</b></th>
-												<th class="text-right"><b>Rp. <?php echo number_format($total,0,',','.'); ?></b></th>
+												<th class="text-right"><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></th>
 											</tr>
 										</tfoot>
 									</table>
@@ -69,7 +69,7 @@
 												<th width="15%" class="text-center">Periode</th>
 												<th width="13%" class="text-center">Transaksi</th>
 												<th width="13%" class="text-center">Tgl bayar</th>
-												<th width="15%" class="text-right">Nominal</th>
+												<th width="25%" class="text-right">Nominal</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -87,14 +87,14 @@
 											<td class="text-center"><?php echo $row->tipe_jenis == 'per_bulan' ? $bulan[(int)date('m', strtotime($row->periode))].' '.date('Y', strtotime($row->periode)) : $row->periode; ?></td>
 											<td class="text-center"><?php echo ucwords($row->jenis_transaksi); ?></td>
 											<td class="text-center"><?php echo date('d/m/Y', strtotime($row->tgl_bayar)); ?></td>
-											<td class="text-right">Rp. <?php echo number_format($row->bayar,0,',','.'); ?></td>
+											<td class="text-right">Rp<?php echo number_format($row->bayar,0,',','.'); ?>,00</td>
 										</tr>
 										<?php } ?>
 										</tbody>
 										<tfoot>
 											<tr>
 												<th class="text-right" colspan="6"><b>Total</b></th>
-												<th class="text-right"><b>Rp. <?php echo number_format($total,0,',','.'); ?></b></th>
+												<th class="text-right"><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></th>
 											</tr>
 										</tfoot>
 									</table>
@@ -113,8 +113,8 @@
 
 
 [section name="plugin-css"]
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/custom/plugin/datatable_new/datatables.min.css"/>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/custom/plugin/datatable_new/mytable.css"/>
+
+
 [/section]
 
 [section name="css"]

@@ -71,7 +71,7 @@
 				</div>
 			</div>
 			<div class="col-md-9 text-right">
-				<span id="jmltotpengumuman" class="va-m text-muted mr15"> Menampilkan <strong id="jml_aktif"><?php echo count($pengumuman); ?></strong> pengumuman terbaru</span>
+				<span id="jmltotpengumuman" class="va-m text-muted pull-left"> Menampilkan <strong id="jml_aktif"><?php echo count($pengumuman); ?></strong> pengumuman terbaru</span>
 			</div>
 			</div>
 		</div>
@@ -80,11 +80,11 @@
 			<tbody>
 				<?php foreach($pengumuman as $row) { ?>
 				<tr class="message-unread clickable" kategori="<?php echo $row->id_kategori; ?>" id_pengumuman="<?php echo $row->id_pengumuman; ?>">
-					<td width="5%"><i class="mr5 <?php echo $row->icon; ?> fs14 visible-md visible-lg "></i></td>
-					<td width="15%"><?php echo $row->nama_kategori; ?></td>
-					<td width="15%"><span class="badge badge-info mr10 fs11 visible-md visible-lg"> <?php echo datetime2History($row->publish_date); ?> lalu </span></td>
+					<td class="fs14 visible-md visible-lg" width="5%"><i class="mr5 <?php echo $row->icon; ?>"></i></td>
+					<td class="text-center" width="15%"><?php echo $row->nama_kategori; ?></td>
+					<td class="fs14 visible-md visible-lg" width="15%"><span class="badge badge-info"> <?php echo datetime2History($row->publish_date); ?> lalu </span></td>
 					<td><?php echo $row->judul; ?></td>
-					<td width="15%" class="text-center fw600 pr15"><?php echo date('d M Y', strtotime($row->publish_date)); ?></td>
+					<td width="25%" class="text-right fw600 pr15"><?php echo date('d M Y', strtotime($row->publish_date)); ?></td>
 				</tr>
 				<?php } ?>
 			</tbody>
