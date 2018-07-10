@@ -19,11 +19,11 @@
 					<tbody>
 						<tr>
 							<th width="35%">No. Induk</th>
-							<td><?php echo $this->detail_siswa->no_induk; ?></td>
+							<td><?php echo $detail_siswa->no_induk; ?></td>
 						</tr>
 						<tr>
 							<th>NISN</th>
-							<td><?php echo $this->detail_siswa->nisn; ?></td>
+							<td><?php echo $detail_siswa->nisn; ?></td>
 						</tr>
 						<tr>
 							<th>Thn Ajaran</th>
@@ -31,23 +31,23 @@
 						</tr>
 						<tr>
 							<th>Jenjang</th>
-							<td><?php echo $this->detail_siswa->nama_jenjang; ?></td>
+							<td><?php echo $detail_siswa->nama_jenjang; ?></td>
 						</tr>
 						<tr>
 							<th>Sekolah</th>
-							<td><?php echo $this->detail_siswa->nama_sekolah; ?></td>
+							<td><?php echo $detail_siswa->nama_sekolah; ?></td>
 						</tr>
 						<tr>
 							<th>Jurusan</th>
-							<td><?php echo $this->detail_siswa->nama_jurusan; ?></td>
+							<td><?php echo $detail_siswa->nama_jurusan; ?></td>
 						</tr>
 						<tr>
 							<th>Kelas</th>
-							<td><?php echo $this->detail_siswa->nama_kelas; ?></td>
+							<td><?php echo $detail_siswa->nama_kelas; ?></td>
 						</tr>
 						<tr>
 							<th>Angkatan</th>
-							<td><?php echo $this->detail_siswa->angkatan; ?></td>
+							<td><?php echo $detail_siswa->angkatan; ?></td>
 						</tr>
 					</tbody>
 				</table>
@@ -76,31 +76,31 @@
 								<tbody>
 									<tr>
 										<th width="35%">Nama</th>
-										<td><?php echo $this->detail_siswa->nama; ?></td>
+										<td><?php echo $detail_siswa->nama; ?></td>
 									</tr>
 									<tr>
 										<th>Tempat / Tgl Lahir</th>
-										<td><?php echo $this->detail_siswa->kota_lahir.' / '.date('d/m/Y', strtotime($this->detail_siswa->tgl_lahir)); ?></td>
+										<td><?php echo $detail_siswa->kota_lahir.'  '.date('d/m/Y', strtotime($detail_siswa->tgl_lahir)); ?></td>
 									</tr>
 									<tr>
 										<th>Jenis Kelamin</th>
-										<td><?php echo $this->detail_siswa->jk == 'l' ? 'Laki-laki' : 'Perempuan'; ?></td>
+										<td><?php echo $detail_siswa->jk == 'l' ? 'Laki-laki' : 'Perempuan'; ?></td>
 									</tr>
 									<tr>
 										<th>Alamat</th>
-										<td><?php echo $this->detail_siswa->alamat; ?></td>
+										<td><?php echo $detail_siswa->alamat; ?></td>
 									</tr>
 									<tr>
 										<th>Telp</th>
-										<td><?php echo $this->detail_siswa->telp; ?></td>
+										<td><?php echo $detail_siswa->telp; ?></td>
 									</tr>
 									<tr>
 										<th>Agama</th>
-										<td><?php echo $this->detail_siswa->nama_agama; ?></td>
+										<td><?php echo $detail_siswa->nama_agama; ?></td>
 									</tr>
 									<tr>
 										<th>Email</th>
-										<td><?php echo $this->detail_siswa->email; ?></td>
+										<td><?php echo $detail_siswa->email; ?></td>
 									</tr>
 								</tbody>
 							</table>
@@ -119,19 +119,19 @@
 								<tbody>
 									<tr>
 										<th width="35%">Nama Ayah</th>
-										<td><?php echo $this->detail_siswa->nama_ayah; ?></td>
+										<td><?php echo $detail_siswa->nama_ayah; ?></td>
 									</tr>
 									<tr>
 										<th>Telp Ayah</th>
-										<td><?php echo $this->detail_siswa->telp_ayah; ?></td>
+										<td><?php echo $detail_siswa->telp_ayah; ?></td>
 									</tr>
 									<tr>
 										<th>Nama Ibu</th>
-										<td><?php echo $this->detail_siswa->nama_ibu; ?></td>
+										<td><?php echo $detail_siswa->nama_ibu; ?></td>
 									</tr>
 									<tr>
 										<th>Telp Ibu</th>
-										<td><?php echo $this->detail_siswa->telp_ibu; ?></td>
+										<td><?php echo $detail_siswa->telp_ibu; ?></td>
 									</tr>
 
 								</tbody>

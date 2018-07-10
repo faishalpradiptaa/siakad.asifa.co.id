@@ -2,6 +2,16 @@
 
 class mod_siswa extends MY_Model
 {
+	public function getProfile(){
+		return $this->db
+		->select('sw.*, ag.*')
+		->join('tb_akd_rf_agama ag', 'ag.kode_agama=sw.agama')
+		->where('no_induk', NO_INDUK)
+		->get('tb_akd_rf_siswa sw')->row();
+	}
+	public function getTahunAjaran(){
+		return $this->db->where('kode_thn_ajaran', THN_AJARAN)->get('tb_akd_rf_thn_ajaran')->row();
+	}
 
 	public function getDetail($thn_ajaran=false)
 	{
@@ -20,9 +30,9 @@ class mod_siswa extends MY_Model
 			->where('ak.kode_thn_ajaran', $thn_ajaran)
 			->where('ak.no_induk', NO_INDUK)
 			->get('tb_akd_tr_ambil_kelas ak')
-			->row();		
+			->row();
 	}
-	
+
 	public function getThnAjaranByPengambilan()
 	{
 		return $this->db
@@ -35,9 +45,9 @@ class mod_siswa extends MY_Model
 			->order_by('t.sem_ajaran', 'ASC')
 			->get('tb_akd_tr_ambil_kelas ak')
 			->result();
-		
+
 	}
-	
+
 	public function updateProfile($data)
 	{
 		if($data['pass_baru'])
@@ -59,7 +69,7 @@ class mod_siswa extends MY_Model
 				$this->session->set_flashdata('error', 'Password lama yang anda masukkan salah.');
 				return false;
 			}
-			
+
 			$p = md5('=a51['.$data['pass_baru'].']f4=');
 			$res = $this->db->where('no_induk', NO_INDUK)->update('tb_akd_rf_siswa', array('password'=>$p));
 			if($res)
@@ -67,7 +77,7 @@ class mod_siswa extends MY_Model
 			else
 				$this->session->set_flashdata('error', 'Password gagal diupdate.');
 		}
-		
+
 		$send = array(
 			'alamat' => $data['alamat'],
 			'telp' => $data['telp'],
@@ -82,10 +92,10 @@ class mod_siswa extends MY_Model
 			$this->session->set_flashdata('success', 'Data profil berhasil diupdate.');
 		else
 			$this->session->set_flashdata('error', 'Data profil gagal diupdate.');
-	
-		
-		
+
+
+
 		return $res;
-		
+
 	}
 }
