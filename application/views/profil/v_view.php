@@ -31,19 +31,19 @@
 						</tr>
 						<tr>
 							<th>Jenjang</th>
-							<td><?php echo $detail_siswa->nama_jenjang; ?></td>
+							<td><?php echo $ambil_kelas->nama_jenjang; ?></td>
 						</tr>
 						<tr>
 							<th>Sekolah</th>
-							<td><?php echo $detail_siswa->nama_sekolah; ?></td>
+							<td><?php echo $ambil_kelas->nama_sekolah; ?></td>
 						</tr>
 						<tr>
 							<th>Jurusan</th>
-							<td><?php echo $detail_siswa->nama_jurusan; ?></td>
+							<td><?php echo $ambil_kelas->nama_jurusan; ?></td>
 						</tr>
 						<tr>
 							<th>Kelas</th>
-							<td><?php echo $detail_siswa->nama_kelas; ?></td>
+							<td><?php echo $ambil_kelas->nama_kelas; ?></td>
 						</tr>
 						<tr>
 							<th>Angkatan</th>

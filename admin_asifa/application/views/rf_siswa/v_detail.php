@@ -13,7 +13,7 @@
 			<li><a href="#tab_pembayaran" data-toggle="tab">Pembayaran</a></li>
 		</ul>
 		<div class="tab-content">
-			
+
 			<div class="tab-pane active" id="tab_identitas">
 				<table class="table table-striped">
 					<tr>
@@ -27,7 +27,7 @@
 						<td><?php echo $data->nama; ?></td>
 						<th>Tempat Lahir</th>
 						<td>
-							<?php 
+							<?php
 								foreach($this->form_data['tempat_lahir']['data'] as $row) if($row->value == $data->tempat_lahir) echo $row->text;
 							?>
 						</td>
@@ -47,7 +47,7 @@
 					<tr>
 						<th>Agama</th>
 						<td>
-							<?php 
+							<?php
 								foreach($this->form_data['agama']['data'] as $row) if($row->value == $data->agama) echo $row->text;
 							?>
 						</td>
@@ -71,7 +71,7 @@
 						<td><?php echo $data->angkatan; ?></td>
 						<th>Status</th>
 						<td>
-							<?php 
+							<?php
 								$status_akademis = '';
 								foreach($this->form_data['status_akademis']['data'] as $row) if($row->value == $data->status_akademis) $status_akademis = $row->text;
 								echo $status_akademis;
@@ -80,7 +80,7 @@
 					</tr>
 
 				</table>
-			</div>	
+			</div>
 
 			<div class="tab-pane" id="tab_akademik">
 				<table class="table table-striped">
@@ -129,11 +129,11 @@
 						<th></th>
 						<td></td>
 					</tr>
-					
+
 				</table>
-			
+
 			</div>
-			
+
 			<div class="tab-pane" id="tab_absensi">
 				<?php
 					$data_absensi = array();
@@ -144,13 +144,13 @@
 						<th width="15%">Tahun Ajaran</th>
 						<th><?php echo $tahun_ajaran->thn_ajaran.' '.$tahun_ajaran->sem_ajaran;?></th>
 					</tr>
-					<?php 
-						foreach($riwayat->jenis as $j) 
+					<?php
+						foreach($riwayat->jenis as $j)
 						{
 							echo '<tr class="warning">';
 							echo '<td colspan="2"><b>'.$j->nama_jenis.'</b></td>';
 							echo '<tr>';
-							if(isset($data_absensi[$j->kode_jenis]) && is_array($data_absensi[$j->kode_jenis])) 
+							if(isset($data_absensi[$j->kode_jenis]) && is_array($data_absensi[$j->kode_jenis]))
 							{
 								foreach($data_absensi[$j->kode_jenis] as $row)
 								{
@@ -163,9 +163,9 @@
 						}
 					?>
 				</table>
-			
+
 			</div>
-			
+
 			<div class="tab-pane" id="tab_tanggungan">
 				<table class="table table-bordered table-responsive table-striped table-hover">
 					<thead>
@@ -181,13 +181,13 @@
 					</thead>
 					<tbody>
 					<?php
-						$i=0; 
+						$i=0;
 						$total_tagih = 0;
 						$total_bayar = 0;
 						$total_kurang = 0;
 						$bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
-						foreach($tagihan as $row) 
-						{ 
+						foreach($tagihan as $row)
+						{
 							$total_tagih += $row->tagih;
 							$total_bayar += $row->bayar;
 							$total_kurang += $row->tanggungan;
@@ -201,7 +201,7 @@
 						<td class="text-right">Rp. <?php echo number_format($row->tanggungan,0,',','.'); ?></td>
 						<td class="text-center"><?php echo $row->status_tagihan; ?></td>
 					</tr>
-					<?php } ?>	
+					<?php } ?>
 					</tbody>
 					<tfoot>
 						<tr>
@@ -214,7 +214,7 @@
 					</tfoot>
 				</table>
 			</div>
-			
+
 			<div class="tab-pane" id="tab_pembayaran">
 				<table class="table table-responsive table-striped table-hover table-bordered">
 					<thead>
@@ -230,10 +230,10 @@
 					</thead>
 					<tbody>
 					<?php
-						$i=0; 
+						$i=0;
 						$total = 0;
 						foreach($pembayaran as $row)
-						{ 
+						{
 							$total += $row->bayar;
 					?>
 					<tr>
@@ -245,7 +245,7 @@
 						<td class="text-center"><?php echo $row->bank; ?></td>
 						<td class="text-right">Rp. <?php echo number_format($row->bayar,0,',','.'); ?></td>
 					</tr>
-					<?php } ?>	
+					<?php } ?>
 					</tbody>
 					<tfoot>
 						<tr>
@@ -255,7 +255,7 @@
 					</tfoot>
 				</table>
 			</div>
-			
+
 		</div>
 	</div>
 </div><!-- /.modal-body -->

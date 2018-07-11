@@ -1,12 +1,12 @@
 
-<div class="modal-header">
+<div class="modal-header"> // Halaman detail
 	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 	<h4 class="modal-title">Detail <?php echo $this->title; ?></h4>
 </div>
 <div class="modal-body">
 	<div class="tab-container">
 		<ul class="nav nav-tabs">
-			<?php 
+			<?php
 				// regroup form_data by tab
 				foreach ($this->form_data as $key => $val)
 				{
@@ -14,7 +14,7 @@
 					if(!isset($this->form_tabs[$tab])) $this->form_tabs[$tab] = array('title' => 'Data '.$this->title);
 					$this->form_tabs[$tab]['data'][$key] = $val;
 				}
-				
+
 				// atur tab
 				$i = 0;
 				foreach($this->form_tabs as $tab_id => $tab_data)
@@ -23,8 +23,8 @@
 					echo '<li class="'.$active.'"><a href="#'.$tab_id.'" data-toggle="tab">'.$tab_data['title'].'</a></li>';
 					$i++;
 				}
-				
-				
+
+
 			?>
 		</ul>
 		<div class="tab-content">
@@ -35,13 +35,13 @@
 					$active = $i == 0 ? 'active' : '';
 			?>
 			<div class="tab-pane <?php echo $active;?>" id="<?php echo $tab_id; ?>">
-				<div class="scroll-content">	
+				<div class="scroll-content">
 					<table class="table table-striped">
 						<?php
 							foreach ($tab_data['data'] as $key => $val)
 							{
 								$my_val = $data ? $data->$key : '';
-								
+
 								$val = (object)$val;
 								if (in_array($val->type, array('select','radio')) && isset($val->data))
 								{
@@ -56,7 +56,7 @@
 									$my_val = $my_val == $val->on_value ? $val->on : $val->off;
 								}
 								elseif ($val->type == 'date' && $my_val) $my_val = dateMySQL2dateInd($my_val);
-							
+
 								if($val->type != 'hidden' && $val->type != 'password' )
 								{
 									echo '
@@ -67,15 +67,15 @@
 								}
 							}
 						?>
-						
+
 					</table>
-				</div>	
-			</div>	
+				</div>
+			</div>
 			<?php
 					$i++;
-				} 
+				}
 			?>
-			
+
 		</div>
 	</div>
 </div><!-- /.modal-body -->

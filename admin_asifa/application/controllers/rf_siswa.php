@@ -3,7 +3,7 @@
 class rf_siswa extends crud_controller {
 
 	public $title = 'Siswa';
-	public $column = array
+	public $column = array //tabel
 	(
 		'tahun_lahir' => array(
 			'title' => 'Tahun Lahir',
@@ -86,7 +86,7 @@ class rf_siswa extends crud_controller {
 			'attribut' => array('data-class' => 'text-center'),
 		),
 		'angkatan' => array(
-			'title' => 'Ankatan',
+			'title' => 'Angkatan1',
 			'filter' => 'text',
 			'width' => '10%',
 			'attribut' => array('data-class' => 'text-center'),
@@ -112,7 +112,7 @@ class rf_siswa extends crud_controller {
 			'attribut' => array('data-class' => 'text-center', 'data-sortable' => 'false'),
 		)
 	);
-	public $form_data = array(
+	public $form_data = array( //form
 		'tahun_lahir' => array(
 			'title' => 'Tahun Lahir',
 			'type' => 'number',
@@ -206,7 +206,7 @@ class rf_siswa extends crud_controller {
 			'validate' => 'required',
 		),
 		'angkatan' => array(
-			'title' => 'Angkatan',
+			'title' => 'Angkatan2',
 			'type' => 'text',
 			'col_width' => 'col-sm-4',
 			'validate' => 'required',
@@ -233,9 +233,9 @@ class rf_siswa extends crud_controller {
 	public $primary_key = 'no_induk';
 	public $additional_script_form = 'rf_siswa/additional_form';
 	public $view_detail = 'rf_siswa/v_detail';
-	
-	
-	// protected CRUD function 
+
+
+	// protected CRUD function
 	protected function renderTable($kolom, $table, $primary_key)
 	{
 		$table = $this->db
@@ -244,7 +244,7 @@ class rf_siswa extends crud_controller {
 			->join('tb_app_rf_kota kt', 'kt.id_kota = tb.tempat_lahir', 'left')
 			->join('tb_app_rf_status st', 'st.kode_status = tb.status_akademis')
 			->join('tb_akd_rf_agama ag', 'ag.kode_agama = tb.agama', 'left');
-			
+
 		$data = $this->datatable->render($kolom, $table, $primary_key);
 		foreach($data->data as $key => $row)
 		{
@@ -252,19 +252,25 @@ class rf_siswa extends crud_controller {
 			$data->data[$key][4] = $row[4] == 'l' ? 'Laki-laki' : 'Perempuan';
 			// format tgl lahir
 			$data->data[$key][6] = dateMySQL2dateInd($row[6]);
-			// format tgl masuk			
+			// format tgl masuk
 			$data->data[$key][14] = dateMySQL2dateInd($row[14]);
-			
+
 			$data->data[$key][count($row)-1] = preg_replace('/#main-modal-md/','#main-modal-lg',$row[count($row)-1], 1);
 		}
 		return $data;
 	}
-	
-	protected function beforeForm($pack, $id=false)
+
+	protected function beforeForm($pack, $id=false)//data buat type "select"
 	{
-		$this->form_data['tempat_lahir']['data'] = $this->db->select('id_kota as value, nama_kota as text')->order_by('nama_kota','ASC')->get('tb_app_rf_kota')->result();
-		$this->form_data['status_akademis']['data'] = $this->db->select('kode_status as value, nama_status as text')->where('tags like "%siswa%"')->get('tb_app_rf_status')->result();
-		$this->form_data['agama']['data'] = $this->db->select('kode_agama as value, nama_agama as text')->order_by('nama_agama','ASC')->get('tb_akd_rf_agama')->result();
+		$this->form_data['tempat_lahir']['data'] = $this->db->select('id_kota as value, nama_kota as text')
+		->order_by('nama_kota','ASC')->get('tb_app_rf_kota')->result();
+		$this->form_data['status_akademis']['data'] = $this->db->select('kode_status as value, nama_status as text')
+		->where('tags like "%siswa%"')->get('tb_app_rf_status')->result();
+		$this->form_data['agama']['data'] = $this->db->select('kode_agama as value, nama_agama as text')
+		->order_by('nama_agama','ASC')->get('tb_akd_rf_agama')->result();
+
+
+
 		if($id)
 		{
 			$this->form_data['password']['validate'] = '';
@@ -278,7 +284,7 @@ class rf_siswa extends crud_controller {
 		$this->load->model('mod_riwayat');
 		$this->load->model('mod_tagihan');
 		$this->load->model('mod_pembayaran');
-		
+
 		$pack['tahun_ajaran'] = $this->db->where('kode_thn_ajaran', THN_AJARAN)->get('tb_akd_rf_thn_ajaran')->row();
 		$pack['akademik'] = $this->mod_siswa->getDetailByNoInduk($id);
 		$pack['riwayat'] = $this->mod_riwayat->getDataByNoInduk($id);
@@ -286,15 +292,15 @@ class rf_siswa extends crud_controller {
 		$pack['pembayaran'] = $this->mod_pembayaran->getDataByNoInduk($id);
 		return $this->beforeForm($pack, $id);
 	}
-	
+
 	protected function beforeSave($data, $id)
 	{
 		if($id && !$data['password']) unset($data['password']);
-		else if($data['password']) $data['password'] =  md5('=a51['.$data['password'].']f4=');		
+		else if($data['password']) $data['password'] =  md5('=a51['.$data['password'].']f4=');
 		return $data;
 	}
-	
-	
+
+
 	// public function
 	public function autocomplete($limit=10)
 	{
@@ -306,5 +312,6 @@ class rf_siswa extends crud_controller {
 		);
 		echo json_encode($result);
 	}
-	
+
+
 }

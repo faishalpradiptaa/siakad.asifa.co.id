@@ -1,5 +1,5 @@
 <?php if ($is_ajax) { ?>
-<div class="modal-header">
+<div class="modal-header"> // Halaman edit form
 	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 	<h4 class="modal-title" ><?php echo ($id) ? 'Ubah' : 'Tambah'; echo ' '.$this->title; ?> </h4>
 </div>
@@ -7,7 +7,7 @@
 <?php } else { ?>
 
 <div class="page-content">
-	
+
 	<div class="page-head">
 		<div class="page-title"><h1><?php echo PAGE_TITLE; ?></h1></div>
 	</div>
@@ -15,7 +15,7 @@
 	<ul class="page-breadcrumb breadcrumb">
 		<li><a href="javascrip:;"><?php echo ($id) ? 'Ubah' : 'Tambah'; echo ' '.$this->title; ?></a></li>
 	</ul>
-	
+
 	<div class="row">
 		<div class="col-md-12">
 			<div class="portlet light">
@@ -24,7 +24,7 @@
 						<i class="font-green-sharp"></i>
 						<span class="caption-subject font-green-sharp bold uppercase"><?php echo ($id) ? 'Ubah' : 'Tambah'; echo ' '.$this->title; ?> </span>
 					</div>
-					<a href="<?php echo site_url(PAGE_ID); ?>" class="btn btn-default btn-sm pull-right margin-t-5" >Kembali</a> 
+					<a href="<?php echo site_url(PAGE_ID); ?>" class="btn btn-default btn-sm pull-right margin-t-5" >Kembali</a>
 					<button type="button" class="btn btn-primary btn-sm pull-right margin-t-5 margin-r-10" onclick="simpan_ajax('save')">Simpan</button>
 				</div>
 				<div class="portlet-body">
@@ -33,17 +33,17 @@
 
 	<form action="<?php echo site_url(PAGE_ID.'/form/'.$raw_id);?>" class="form-horizontal row-border frm_validation">
 	<div class="validation_msg"></div>
-	
+
 	<div class="tab-container">
 		<ul class="nav nav-tabs">
-			<?php 
+			<?php
 				$is_time = false;
 				$is_date = false;
 				$is_datetime = false;
 				$is_switch = false;
 				$is_select = false;
 				$i = 0;
-				
+
 				// regroup form_data by tab
 				foreach ($this->form_data as $key => $val)
 				{
@@ -51,7 +51,7 @@
 					if(!isset($this->form_tabs[$tab])) $this->form_tabs[$tab] = array('title' => 'Data '.$this->title);
 					$this->form_tabs[$tab]['data'][$key] = $val;
 				}
-				
+
 				// atur tab
 				foreach($this->form_tabs as $tab_id => $tab_data)
 				{
@@ -59,7 +59,7 @@
 					echo '<li class="'.$active.'"><a href="#'.$tab_id.'" data-toggle="tab">'.$tab_data['title'].'</a></li>';
 					$i++;
 				}
-				
+
 			?>
 		</ul>
 		<div class="tab-content">
@@ -71,7 +71,7 @@
 			?>
 			<div class="tab-pane <?php echo $active;?>" id="<?php echo $tab_id; ?>">
 				<div class="scroll-content">
-				<?php					
+				<?php
 					foreach ($tab_data['data'] as $key => $val)
 					{
 						$my_val = $data ? $data->$key : '';
@@ -79,7 +79,7 @@
 						$col_width = isset($val->col_width) ? $val->col_width : 'col-sm-9';
 						$elm_id = isset($val->id) ? ' id="'.$val->id.'"' : '';
 						$my_val = $my_val == '' && isset($val->default) ? $val->default : $my_val;
-						
+
 						if ($val->type == 'text')
 						{
 							echo '
@@ -89,7 +89,7 @@
 									<input class="form-control" type="text" name="'.$key.'" '.$elm_id.' validate="'.$val->validate.'" value="'.$my_val.'"/>
 								</div>
 							</div>';
-						}	
+						}
 						elseif ($val->type == 'textarea')
 						{
 							echo '
@@ -99,7 +99,7 @@
 									<textarea class="form-control" name="'.$key.'" '.$elm_id.' validate="'.$val->validate.'" rows="5">'.$my_val.'</textarea>
 								</div>
 							</div>';
-						}	
+						}
 						elseif ($val->type == 'password')
 						{
 							echo '
@@ -132,7 +132,7 @@
 								<div class="'.$col_width.'">
 									<select class="form-control select2" name="'.$key.'" '.$elm_id.' validate="'.$val->validate.'">
 										<option value=""> - Pilih '.$val->title.' - </option>';
-										if(is_array($val->data)) foreach($val->data as $fd) 
+										if(is_array($val->data)) foreach($val->data as $fd)
 										{
 											if(is_array($fd)) $fd = (object)$fd;
 											$attr = isset($fd->additional) ? 'additional="'.$fd->additional.'"' : '';
@@ -150,7 +150,7 @@
 								<label class="col-sm-3 control-label">'.$val->title.'</label>
 								<div class="'.$col_width.'">
 									<div class="radio-list margin-l-20">';
-										if(is_array($val->data)) foreach($val->data as $fd) 
+										if(is_array($val->data)) foreach($val->data as $fd)
 										{
 											if(is_array($fd)) $fd = (object)$fd;
 											echo '<label class="radio-inline"><input type="radio" name="'.$key.'" validate="'.$val->validate.'" '.($fd->value == $my_val || (!$my_val && $fd->value == $val->default) ? 'checked' : '').' value="'.$fd->value.'"> '.$fd->text.' </label>' ;
@@ -241,25 +241,25 @@
 						}
 					}
 				?>
-				
+
 				<?php if (!$is_ajax) { ?>
 					<div class="form-group">
 						<label class="col-sm-3 control-label"></label>
 						<div class="col-md-9">
 							<button type="button" class="btn btn-primary margin-r-5" onclick="simpan_ajax('save')">Simpan</button>
-							<a href="<?php echo site_url(PAGE_ID); ?>" class="btn btn-default" >Kembali</a> 
+							<a href="<?php echo site_url(PAGE_ID); ?>" class="btn btn-default" >Kembali</a>
 						</div>
 					</div>
 				<?php } ?>
-				
+
 				</div>
 			</div>
 			<?php
 					$i++;
-				} 
+				}
 			?>
 		</div>
-	</div>              
+	</div>
 	</form>
 
 <?php if ($is_ajax) { ?>
@@ -309,14 +309,14 @@
 
 	[section name="page-actions"]
 	<div class="btn-group">
-		<a class="pull-right tooltips btn btn-fit-height green-sharp dropdown-toggle" data-toggle="dropdown" href="javascript:;" data-original-titles="Ubah Jenjang"> 
+		<a class="pull-right tooltips btn btn-fit-height green-sharp dropdown-toggle" data-toggle="dropdown" href="javascript:;" data-original-titles="Ubah Jenjang">
 			<i class="fa fa-signal fa-rotate-90"></i>&nbsp;
 			<span class="thin hidden-xs"> <?php echo $this->curr_jenjang->nama_jenjang; ?></span>&nbsp;
 		</a>
 	</div>
 
 	<div class="btn-group">
-		<a class="pull-right tooltips btn btn-fit-height blue-steel dropdown-toggle" data-toggle="dropdown" href="javascript:;" data-original-titles="Ubah Tahun Ajaran"> 
+		<a class="pull-right tooltips btn btn-fit-height blue-steel dropdown-toggle" data-toggle="dropdown" href="javascript:;" data-original-titles="Ubah Tahun Ajaran">
 			<i class="fa fa-archive"></i>&nbsp;
 			<span class="thin hidden-xs">Tahun Ajaran : <?php echo $this->curr_thn_ajaran->thn_ajaran.' '.$this->curr_thn_ajaran->sem_ajaran; ?></span>&nbsp;
 		</a>
@@ -334,7 +334,7 @@
 		height: '470px'
 	});
 	*/
-	
+
 	<?php
 		if ($is_time) echo "$('.timepicker').timepicker({ autoclose: true, minuteStep: 5, showSeconds: true, showMeridian: false });";
 		if ($is_date) echo "$('.datepicker').datepicker({format: 'dd/mm/yyyy'});";
@@ -345,10 +345,10 @@
 	
 	function simpan_ajax(mode)
 	{
-		if (typeof beforeSave == 'function') beforeSave(); 
+		if (typeof beforeSave == 'function') beforeSave();
 		var form = '.frm_validation';
 		if (!validate(form)) return false;
-		
+
 		$.ajax({
 			url : $(form).attr('action'),
 			method : 'POST',
@@ -366,9 +366,9 @@
 						$(form).find('.form-control').first().focus();
 					}
 					else $(form).parents('.modal').find('[data-dismiss="modal"]').click();
-					if (typeof refresh == 'function') refresh(); 
+					if (typeof refresh == 'function') refresh();
 				}
-				else 
+				else
 				{
 					$.pnotify({title: '<?php echo $this->title; ?>', text: 'Data gagal disimpan !', type: 'error'});
 				}
@@ -379,7 +379,7 @@
 		});
 		return false;
 	}
-		
+
 </script>
 <?php if(isset($additional_script)) echo $additional_script; ?>
 

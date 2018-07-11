@@ -1,22 +1,22 @@
-<div class="page-content">
-	
+<div class="page-content"> // Halaman utama template
+
 	<div class="page-head">
 		<div class="page-title"><h1><?php echo PAGE_TITLE; ?></h1></div>
 	</div>
 
 	<ul class="page-breadcrumb breadcrumb">
 	</ul>
-	
+
 	<?php
 		$heading = '';
 		$filter = '';
 		$datatable = array();
-		
+
 		foreach ($this->column as $key => $col)
 		{
 			$col = (object)$col;
 			$title = isset($col->title) ? $col->title : $key;
-			
+
 			// heading
 			$h = '';
 			$attr = '';
@@ -24,19 +24,19 @@
 			if (isset($col->width)) $h = '<th width="'.$col->width.'" '.$attr.'>'.$title.'</th>';
 			else $h = '<th '.$attr.'>'.$title.'</th>';
 			$heading .= $h;
-			
+
 			//filter
 			$f = '';
 			if (isset($col->filter))
 			{
-				
+
 				if ($col->filter == 'text')
 				{
 					$f = '<td><input type="text" class="form-control"/></td>';
 				}
 				else if ($col->filter == 'select' && isset($col->filter_data))
 				{
-					
+
 					$f = '<td><select class="form-control"><option value="">Semua</option>';
 					if(is_array($col->filter_data)) foreach($col->filter_data as $fd)
 					{
@@ -49,13 +49,13 @@
 				{
 					$f = '<td><input type="text" class="form-control"/></td>';
 				}
-			} 
-			else 
+			}
+			else
 			{
 				$f = '<td></td>';
 			}
 			$filter .= $f;
-			
+
 			//datatable
 			$d = isset($col->attribut) ? $col->attribut : 'null';
 			$datatable[] = $d;
@@ -69,13 +69,13 @@
 						<i class="font-green-sharp"></i>
 						<span class="caption-subject font-green-sharp bold uppercase">List <?php echo $this->title; ?> </span>
 					</div>
-					<div class="tools tabletool-container"> 
+					<div class="tools tabletool-container">
 						<a href='<?php echo site_url(PAGE_ID.'/form'); ?>' data-toggle='modal' data-target='#main-modal-md' class="hide" id="crud-add-link"></a>
 					</div>
 				</div>
 				<div class="portlet-body">
 					<div class="table-container">
-						
+
 						<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-hover" id="datatable-main">
 							<thead>
 								<tr class="heading">
@@ -90,7 +90,7 @@
 							<tbody>
 							</tbody>
 						</table>
-						
+
 					</div>
 				</div>
 			</div>
@@ -140,7 +140,7 @@
 <?php if(isset($additional_script)) echo $additional_script; ?>
 <script>
 	var PAGE_URL = '<?php echo site_url(PAGE_ID);?>';
-	
+
 	if (typeof(TAKE_OVER) == 'undefined' || !TAKE_OVER)
 	{
 		var my_table = $("#datatable-main").myTable(
@@ -148,9 +148,9 @@
 			extraButtons : [
 				<?php if ($this->allow_create) echo '{text: "<i class=\'glyphicon glyphicon-plus\'></i>&nbsp; Tambah", action: function ( e, dt, node, config ) {$(\'#crud-add-link\').click()}}'; ?>
 			]
-		});	
+		});
 	}
-	
+
 	$('.page-sidebar-menu a').each(function()
 	{
 		var href = $(this).attr('href');
@@ -158,12 +158,11 @@
 	});
 
 	$('.caption .fa').addClass($('.page-sidebar-menu li.active a').attr('class'));
-	
-	$('body').on('dblclick', '.dataTable tbody tr', function(){ 
+
+	$('body').on('dblclick', '.dataTable tbody tr', function(){
 		$(this).find('a').first().click();
 	});
-	
-	
+
+
 </script>
 [/section]
-
