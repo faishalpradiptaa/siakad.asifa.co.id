@@ -211,6 +211,30 @@ class rf_siswa extends crud_controller {
 			'col_width' => 'col-sm-4',
 			'validate' => 'required',
 		),
+		//'jenjang' => array(
+		//	'title' => 'Jenjang',
+		//	'type' => 'select',
+		//	'col_width' => 'col-sm-5',
+		//	'validate' => 'required',
+	//	),
+	//	'sekolah' => array(
+	//		'title' => 'Sekolah',
+		//	'type' => 'select',
+			//'col_width' => 'col-sm-5',
+			//'validate' => 'required',
+	//	),
+	//	'jurusan' => array(
+	//		'title' => 'Jurusan',
+	//		'type' => 'select',
+	//		'col_width' => 'col-sm-5',
+	//		'validate' => 'required',
+	//	),
+	//	'kelas' => array(
+	//		'title' => 'Kelas',
+	//		'type' => 'select',
+	//		'col_width' => 'col-sm-5',
+	//		'validate' => 'required',
+	//	),
 		'agama' => array(
 			'title' => 'Agama',
 			'type' => 'select',
@@ -268,8 +292,14 @@ class rf_siswa extends crud_controller {
 		->where('tags like "%siswa%"')->get('tb_app_rf_status')->result();
 		$this->form_data['agama']['data'] = $this->db->select('kode_agama as value, nama_agama as text')
 		->order_by('nama_agama','ASC')->get('tb_akd_rf_agama')->result();
-
-
+		//$this->form_data['jenjang']['data'] = $this->db->select('kode_jenjang as value, nama_jenjang as text')
+		//->order_by('kode_jenjang','ASC')->get('tb_akd_rf_jenjang')->result();
+		//$this->form_data['jurusan']['data'] = $this->db->select('kode_jurusan as value, nama_jurusan as text')
+		//->order_by('kode_jurusan','ASC')->get('tb_akd_rf_jurusan')->result();
+		//$this->form_data['sekolah']['data'] = $this->db->select('kode_sekolah as value, nama_sekolah as text')
+		//->order_by('kode_sekolah','ASC')->get('tb_akd_rf_sekolah')->result();
+		//$this->form_data['kelas']['data'] = $this->db->select('kode_kelas as value, nama_kelas as text')
+		//->where('kode_thn_ajaran', THN_AJARAN)->order_by('kode_kelas','ASC')->get('tb_akd_rf_kelas')->result();
 
 		if($id)
 		{
@@ -312,6 +342,5 @@ class rf_siswa extends crud_controller {
 		);
 		echo json_encode($result);
 	}
-
 
 }
