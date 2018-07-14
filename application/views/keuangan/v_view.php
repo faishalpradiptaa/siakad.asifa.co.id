@@ -1,3 +1,6 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/custom/css/table.css'); ?>">
+</head>
 <div class="admin-panels mn pn">
 	<div class="admin-grid">
 		<!-- Panel with All Options -->
@@ -12,91 +15,132 @@
 			<div class="panel-body">
 				<div class="panel sort-disable">
 					<div class="nav">
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#tab-tanggungan" data-toggle="tab">Tanggungan</a></li>
-							<li class=""><a href="#tab-pembayaran" data-toggle="tab">Riwayat Pembayaran </a></li>
+						<ul class="nav nav-tabs nav-justified">
+							<li class="active"><a class="fw600" href="#tab-tanggungan" data-toggle="tab">Tanggungan</a></li>
+							<li class=""><a class="fw600" href="#tab-pembayaran" data-toggle="tab">Riwayat Pembayaran </a></li>
 						</ul>
 					</div>
 					<div class="panel-body" style="overflow-y: scroll; height: 500px; width: auto;">
 						<div class="tab-content pn br-n">
 							<div id="tab-tanggungan" class="tab-pane active">
-								<div class="row">
-									<table class="table table-responsive table-striped table-hover">
-										<thead>
-											<tr class="dark">
-												<th width="5%" class="text-center">No.</th>
-												<th width="20%" class="text-center">Kode</th>
-												<th>Jenis</th>
-												<th width="15%" class="text-center">Periode</th>
-												<th width="25%" class="text-right">Nominal</th>
+								<div class="total_tagihan">
+									<table role="table">
+										<thead role="rowgroup">
+										<tr role="row">
+											<th role="columnheader">Total</th>
 											</tr>
-										</thead>
-										<tbody>
-										<?php
-											$i=0;
-											$total = 0;
-											$bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
-											foreach($tagihan as $row) if(strtolower($row->status_tagihan) <> 'lunas' || $row->tanggungan)
-											{
-												$total += $row->tanggungan;
-										?>
-										<tr class="danger">
-											<td class="text-center"><?php echo ++$i; ?></td>
-											<td class="text-center"><?php echo $row->kode_tagihan; ?></td>
-											<td><?php echo $row->nama_jenis; ?></td>
-											<td class="text-center"><?php echo $row->tipe_jenis == 'per_bulan' ? $bulan[(int)date('m', strtotime($row->periode))].' '.date('Y', strtotime($row->periode)) : $row->periode; ?></td>
-											<td class="text-right">Rp<?php echo number_format($row->tanggungan,0,',','.'); ?>,00</td>
-										</tr>
-										<?php } ?>
-										</tbody>
-										<tfoot>
-											<tr>
-												<th class="text-right" colspan="4"><b>Total</b></th>
-												<th class="text-right"><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></th>
-											</tr>
-										</tfoot>
+											</thead>
+											<tbody role="rowgroup">
+												<tr role="row">
+												<?php foreach($tagihan as $row) if(strtolower($row->status_tagihan) <> 'lunas' || $row->tanggungan)
+													{
+														$total += $row->tanggungan;
+													}?>
+													<td role="cell" ><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></td>
+												</tr>
+											</tbody>
+									</table>
+								</div>
+								<div class="panel-heading"><b>Rincian</b></div>
+								<div class="tabel_tagihan">
+									<table id="customers" "role="table">
+  									<thead role="rowgroup">
+    								<tr role="row">
+	      							<th role="columnheader">Kode</th>
+	      							<th role="columnheader">Jenis</th>
+	      							<th role="columnheader">Periode</th>
+	      							<th role="columnheader">Nominal</th>
+										  </tr>
+										  </thead>
+										  <tbody role="rowgroup">
+												<?php
+													$i=0;
+													$total = 0;
+												$bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+												foreach($tagihan as $row) if(strtolower($row->status_tagihan) <> 'lunas' || $row->tanggungan)
+												{
+													$total += $row->tanggungan;
+											?>
+									    <tr role="row">
+									      <td role="cell"><?php echo $row->kode_tagihan; ?></td>
+									      <td role="cell"><?php echo $row->nama_jenis; ?></td>
+									      <td role="cell"><?php echo $row->tipe_jenis == 'per_bulan' ? $bulan[(int)date('m', strtotime($row->periode))].' '.date('Y', strtotime($row->periode)) : $row->periode; ?></td>
+									      <td role="cell">Rp<?php echo number_format($row->tanggungan,0,',','.'); ?>,00</td>
+									    </tr>
+											<tr></tr>
+									    <?php } ?>
+									  </tbody>
 									</table>
 								</div>
 							</div>
 							<div id="tab-pembayaran" class="tab-pane">
-								<div class="row">
-									<table class="table table-responsive table-striped table-hover">
-										<thead>
-											<tr class="dark">
-												<th width="5%" class="text-center">No.</th>
-												<th width="20%" class="text-center">Kode</th>
-												<th>Jenis</th>
-												<th width="15%" class="text-center">Periode</th>
-												<th width="13%" class="text-center">Transaksi</th>
-												<th width="13%" class="text-center">Tgl bayar</th>
-												<th width="25%" class="text-right">Nominal</th>
+								<div  class="total_tagihan">
+									<table role="table">
+										<thead role="rowgroup">
+										<tr role="row">
+											<th role="columnheader">Total</th>
 											</tr>
-										</thead>
-										<tbody>
-										<?php
-											$i=0;
-											$total = 0;
-											foreach($pembayaran as $row)
-											{
-												$total += $row->bayar;
-										?>
-										<tr>
-											<td class="text-center"><?php echo ++$i; ?></td>
-											<td class="text-center"><?php echo $row->kode_pembayaran; ?></td>
-											<td><?php echo $row->nama_jenis; ?></td>
-											<td class="text-center"><?php echo $row->tipe_jenis == 'per_bulan' ? $bulan[(int)date('m', strtotime($row->periode))].' '.date('Y', strtotime($row->periode)) : $row->periode; ?></td>
-											<td class="text-center"><?php echo ucwords($row->jenis_transaksi); ?></td>
-											<td class="text-center"><?php echo date('d/m/Y', strtotime($row->tgl_bayar)); ?></td>
-											<td class="text-right">Rp<?php echo number_format($row->bayar,0,',','.'); ?>,00</td>
+											</thead>
+											<tbody role="rowgroup">
+												<tr role="row">
+												<?php
+													$i=0;
+													$total = 0;
+													foreach($pembayaran as $row)
+													{
+														$total += $row->bayar;
+													}?>
+													<td role="cell" ><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></td>
+												</tr>
+											</tbody>
+									</table>
+								</div>
+								<div class="panel-heading"><b>Rincian</b></div>
+								<div>
+									<table id="customers"class="tabel_pembayaran">
+										<thead role="rowgroup">
+    								<tr role="row">
+	      							<th role="columnheader">Kode</th>
+	      							<th role="columnheader">Jenis</th>
+	      							<th role="columnheader">Periode</th>
+											<th role="columnheader">Transaksi</th>
+											<th role="columnheader">Tanggal Bayar</th>
+	      							<th role="columnheader">Nominal</th>
 										</tr>
-										<?php } ?>
-										</tbody>
-										<tfoot>
-											<tr>
-												<th class="text-right" colspan="6"><b>Total</b></th>
-												<th class="text-right"><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></th>
-											</tr>
-										</tfoot>
+										</thead>
+										  <tbody role="rowgroup">
+												<?php
+													$i=0;
+													$total = 0;
+													foreach($pembayaran as $row)
+													{
+														$total += $row->bayar;
+												?>
+									    <tr role="row">
+									      <td role="cell"><?php echo $row->kode_pembayaran; ?></td>
+									      <td role="cell"><?php echo $row->nama_jenis; ?></td>
+									      <td role="cell"><?php echo $row->tipe_jenis == 'per_bulan' ? $bulan[(int)date('m', strtotime($row->periode))].' '.date('Y', strtotime($row->periode)) : $row->periode; ?></td>
+									      <td role="cell"><?php echo ucwords($row->jenis_transaksi); ?></td>
+												<td role="cell"><?php echo date('d/m/Y', strtotime($row->tgl_bayar)); ?></td>
+												<td role="cell">Rp<?php echo number_format($row->bayar,0,',','.'); ?>,00</td>
+									    </tr>
+											<tr></tr>
+									    <?php } ?>
+									  </tbody>
+									</table>
+								</div>
+								<div  class="total_tagihan">
+									<table role="table">
+										<thead role="rowgroup">
+    								<tr role="row">
+	      							<th role="columnheader">Total</th>
+										  </tr>
+										  </thead>
+											<tbody role="rowgroup">
+												<tr role="row">
+													<td role="cell"><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></td>
+												</tr>
+											</tbody>
 									</table>
 								</div>
 							</div>

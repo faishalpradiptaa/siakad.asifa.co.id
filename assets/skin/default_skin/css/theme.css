@@ -8051,6 +8051,7 @@ th {
   a,
   a:visited {
     text-decoration: underline;
+    font-weight: bold;
   }
   a[href]:after {
     content: " (" attr(href) ")";
@@ -8147,7 +8148,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #babcbe;
+  color: #647165;
   text-decoration: none;
 }
 a:hover,
@@ -11117,7 +11118,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #4a89dc;
+  color: #4CAF50;
   background-color: transparent;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
@@ -18658,7 +18659,7 @@ ul.tray-nav.tray-nav-arrow li:hover a:after {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: #CCC;
+  background: #4CAF50;
 }
 .tray-nav.tray-nav-border li.active:after {
   background: #4a89dc;
@@ -18847,7 +18848,7 @@ body.tray-rescale .tray-right:hover {
 ================================================= */
 /* Sidebar Container */
 #sidebar_left {
-  color: #fff;
+  color: #70ca63;
   font-size: 13px;
   position: absolute;
   top: 0;
@@ -19632,7 +19633,7 @@ body.sb-l-m .navbar-brand {
 }
 /* Top Level Active Menu Item - Icon Color */
 .sidebar-menu > li.active > a > span:nth-child(1) {
-  color: #4a89dc;
+  color: #4CAF50;
 }
 /* Top Level Active Item - Border Color */
 .sidebar-menu > li.active > a:after,
@@ -19712,7 +19713,7 @@ body.sb-l-m .sidebar-menu > li > a > .sidebar-title {
 }
 /* Minified Sidebar - Active Icon */
 body.sb-l-m .sidebar-menu > li.active > a > span:nth-child(1) {
-  color: #4a89dc;
+  color: #4CAF50;
 }
 /*=======================================================
   G. Sidebar Light Color Settings
@@ -20159,7 +20160,7 @@ manipulation using an html class aswell */
   background-color: transparent;
 }
 .breadcrumb > li {
-  color: #4a89dc;
+  color: #4CAF50;
 }
 .breadcrumb > li.crumb-active > a {
   color: #555;
@@ -21344,7 +21345,7 @@ a.bg-primary:hover {
   color: #276ecc;
 }
 .bg-primary.light {
-  background-color: #649ae1 !important;
+  background-color: #4caf50 !important;
 }
 .bg-primary.lighter {
   background-color: #75a5e4 !important;
@@ -22732,8 +22733,8 @@ a.list-group-item-dark.active:focus {
 }
 .panel-info > .panel-heading {
   color: #ffffff;
-  background-color: #3bafda;
-  border-color: #3bafda;
+  background-color: #4CAF50;
+  border-color: #4CAF50;
 }
 .panel-info > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #3bafda;

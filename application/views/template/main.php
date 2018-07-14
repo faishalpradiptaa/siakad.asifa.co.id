@@ -5,7 +5,7 @@
 <!-- Meta, title, CSS, favicons, etc. -->
 <meta charset="utf-8">
 <title><?php echo PAGE_TITLE; ?></title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
 
 <!-- Font CSS (Via CDN) -->
 <!--link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'-->
@@ -73,8 +73,8 @@
 				<i class="fa fa-circle"></i>
 			</li>
 			<li class="dropdown">
-				<a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> 
-					<img src="<?php echo base_url('assets/img/avatars/placeholder.png'); ?>" alt="avatar" class="mw30 br64 mr15"> 
+				<a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
+					<img src="<?php echo base_url('assets/img/avatars/placeholder.png'); ?>" alt="avatar" class="mw30 br64 mr15">
 					<?php echo NAMA_LENGKAP ? NAMA_LENGKAP : USERNAME; ?>
 					<span class="caret caret-tp hidden-xs"></span>
 				</a>
@@ -107,14 +107,14 @@
 	<!-- End: Header -->
 
 	<!-- Start: Sidebar -->
-	<aside id="sidebar_left" class="nano nano-primary affix">
+	<aside id="sidebar_left" class="nano nano-primary">
 
 		<!-- Start: Sidebar Left Content -->
 		<div class="sidebar-left-content nano-content">
 
 			<!-- Start: Sidebar Header -->
 			<header class="sidebar-header">
-			 
+
 			</header>
 			<!-- End: Sidebar Header -->
 
@@ -123,28 +123,28 @@
 				<li class="sidebar-label pt20">Menu</li>
 				<li>
 					<a href="<?php echo site_url(); ?>">
-						<span class="fa fa-home"></span> 
+						<span class="fa fa-home"></span>
 						<span class="sidebar-title">Beranda</span>
-					</a> 
+					</a>
 				</li>
 				<li>
 					<a href="<?php echo site_url('keuangan'); ?>">
-						<span class="fa fa-money"></span> 
+						<span class="fa fa-money"></span>
 						<span class="sidebar-title">Keuangan</span>
-					</a> 
+					</a>
 				</li>
 				<li>
 					<a class="accordion-toggle" href="#">
-						<span class="glyphicons glyphicons-adress_book"></span> 
+						<span class="glyphicons glyphicons-adress_book"></span>
 						<span class="sidebar-title">Rapor</span>
-						<?php if($menu_template) echo '<span class="caret"></span>'; ?>						
-					</a> 
+						<?php if($menu_template) echo '<span class="caret"></span>'; ?>
+					</a>
 					<?php if($menu_template) { ?>
 					<ul class="nav sub-nav">
 						<?php foreach($menu_template as $mtemp) { ?>
 						<li>
 							<a href="<?php echo site_url('rapor/'.$mtemp->kode_template); ?>">
-								<span class="fa fa-calendar"></span> 
+								<span class="fa fa-calendar"></span>
 								<?php echo $mtemp->nama_template; ?>
 							</a>
 						</li>
@@ -154,27 +154,27 @@
 				</li>
 				<li>
 					<a href="<?php echo site_url('kehadiran'); ?>">
-						<span class="glyphicons glyphicons-bell"></span> 
+						<span class="glyphicons glyphicons-bell"></span>
 						<span class="sidebar-title">Kehadiran</span>
-					</a> 
+					</a>
 				</li>
 				<li>
 					<a href="<?php echo site_url('tugas'); ?>">
-						<span class="glyphicons glyphicons-pushpin"></span> 
+						<span class="glyphicons glyphicons-pushpin"></span>
 						<span class="sidebar-title">Tugas</span>
-					</a> 
+					</a>
 				</li>
 				<li>
 					<a href="<?php echo site_url('profil'); ?>">
-						<span class="glyphicons glyphicons-user"></span> 
+						<span class="glyphicons glyphicons-user"></span>
 						<span class="sidebar-title">Profil</span>
-					</a> 
+					</a>
 				</li>
 				<li>
 					<a href="<?php echo site_url('setting'); ?>">
-						<span class="glyphicons glyphicons-cogwheels"></span> 
+						<span class="glyphicons glyphicons-cogwheels"></span>
 						<span class="sidebar-title">Pengaturan</span>
-					</a> 
+					</a>
 				</li>
 
 			</ul>
@@ -195,7 +195,7 @@
 
 	<!-- Start: Content-Wrapper -->
 	<section id="content_wrapper">
-	 
+
 		<!-- Start: Topbar -->
 		<header id="topbar">
 			<div class="topbar-left">
@@ -203,17 +203,12 @@
 					<li class="crumb-active">
 						<a href="">Dashboard</a>
 					</li>
-					<li class="crumb-icon">
-						<a href="dashboard.html">
-							<span class="glyphicon glyphicon-home"></span>
-						</a>
-					</li>
 					<li class="crumb-link">
 						<a href="<?php echo base_url(); ?>">Home</a>
 					</li>
 				</ol>
 			</div>
-		 
+
 		</header>
 		<!-- End: Topbar -->
 
@@ -225,21 +220,21 @@
 
 	</section>
 
- 
+
 </div>
 <!-- End: Main -->
 
 <!-- BEGIN MODAl -->
 <div id="main-modal-lg" class="modal fade">
 	<div class="modal-dialog modal-lg">
-		<div class="modal-content">	
+		<div class="modal-content">
 			<div class="modal-loading"><i class="fa fa-refresh fa-spin"></i>&nbsp; Loading Data</div>
 		</div>
 	</div>
 </div>
 <div id="main-modal-md" class="modal fade">
 	<div class="modal-dialog">
-		<div class="modal-content">	
+		<div class="modal-content">
 			<div class="modal-loading"><i class="fa fa-refresh fa-spin"></i>&nbsp; Loading Data</div>
 		</div>
 	</div>
@@ -265,9 +260,9 @@
 <script type="text/javascript">
 	jQuery(document).ready(function() {
 		"use strict";
-		// Init Theme Core    
+		// Init Theme Core
 		Core.init();
-		// Init Demo JS     
+		// Init Demo JS
 		Demo.init();
 
 		// set active menu
@@ -297,17 +292,17 @@
 				breadcrumb.find('.crumb-active a').html(title);
 				breadcrumb.append('<li class="crumb-trail">'+title+'</li>');
 			}
-			
+
 		}
-		
+
 	});
-	
+
 	$('body').on('hidden.bs.modal', '#main-modal-lg, #main-modal-md', function () {
 		$(this).removeData('bs.modal');
 		$(this).find('.modal-content').html('<div class="modal-loading"><i class="fa fa-refresh fa-spin"></i>&nbsp; Loading Data</div>')
 	});
-	
-	$("body").on("shown.bs.modal", '#main-modal-lg, #main-modal-md', function(e) 
+
+	$("body").on("shown.bs.modal", '#main-modal-lg, #main-modal-md', function(e)
 	{
 		$(this).find('.form-control').first().focus();
 	});

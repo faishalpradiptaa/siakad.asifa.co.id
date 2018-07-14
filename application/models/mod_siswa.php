@@ -17,7 +17,7 @@ class mod_siswa extends MY_Model
 		->join('tb_akd_rf_sekolah sk', 'sk.kode_sekolah=ak.kode_sekolah')
 		->join('tb_akd_rf_kelas kl', 'kl.kode_kelas=ak.kode_kelas')
 		->where('ak.no_induk', NO_INDUK)
-		//->where('ak.kode_thn_ajaran', THN_AJARAN)
+		->where('ak.kode_thn_ajaran', THN_AJARAN)
 		->get('tb_akd_tr_ambil_kelas ak')->row();
 	}
 	public function getTahunAjaran(){

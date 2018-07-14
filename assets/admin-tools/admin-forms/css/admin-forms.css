@@ -180,7 +180,7 @@
   line-height: 42px;
 }
 /*==================================================================
-  General Input Styling 
+  General Input Styling
 ===================================================================*/
 .admin-form .radio,
 .admin-form .option,
@@ -477,14 +477,14 @@
   border-radius: 10px;
 }
 /*==================================================================
-  Radio/Checkboxes:hover state 
+  Radio/Checkboxes:hover state
 ===================================================================*/
 .admin-form input:not([disabled]):hover + .checkbox,
 .admin-form input:not([disabled]):hover + .radio {
   border-color: #666;
 }
 /*==================================================================
-  Radio/Checkboxes:focus state 
+  Radio/Checkboxes:focus state
 -===================================================================*/
 .admin-form input:focus + .checkbox,
 .admin-form input:focus + .radio {
@@ -955,7 +955,7 @@
   color: #DE888A;
 }
 /*==================================================================
-  Validation - success state 
+  Validation - success state
 ===================================================================*/
 .admin-form .state-success .gui-input,
 .admin-form .state-success .gui-textarea,
@@ -1046,7 +1046,7 @@
   right: 0;
 }
 /*==================================================================
-  Smart Widget Button - Left 
+  Smart Widget Button - Left
 ===================================================================*/
 .admin-form .sml-50,
 .admin-form .prepend-picker-icon {
@@ -1075,7 +1075,7 @@
   width: 160px;
 }
 /*==================================================================
-  Smart Widget Button - Right 
+  Smart Widget Button - Right
 ===================================================================*/
 .admin-form .smr-50,
 .admin-form .append-picker-icon {
@@ -2019,7 +2019,7 @@
   border: 1px solid #DDD;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
-/* expands container to the left of 
+/* expands container to the left of
  * button, default opens right */
 .sp-container.sp-left {
   top: 50px !important;
@@ -2568,7 +2568,7 @@
   top: 3px;
 }
 /*==================================================================
-  Google Map Block 
+  Google Map Block
 ===================================================================*/
 .admin-form .map-container {
   padding: 7px;
@@ -2819,7 +2819,7 @@
   background: #f2f2f2;
 }
 /*==================================================================
-  Progress Bars 
+  Progress Bars
 ===================================================================*/
 .admin-form .progress-section {
   display: none;
@@ -2855,7 +2855,7 @@
 /* This file creates and combines all of the AdminForm color skins.
  * To minimize file size, we recommended using only one or two skins.
  * However, we have provided this file as it proves useful for demonstrating
- * all of skins or for enabling true multi-skin support. 
+ * all of skins or for enabling true multi-skin support.
  */
 .admin-form .panel-primary > .panel-heading {
   border-top-color: #5d9cec;
@@ -2912,7 +2912,7 @@
   border-color: #2e76d6;
 }
 .admin-form .btn-primary {
-  background-color: #4a89dc;
+  background-color: #4CAF50;
 }
 .admin-form .btn-primary:hover,
 .admin-form .btn-primary:focus {
@@ -3029,7 +3029,7 @@
 }
 .admin-form .panel-info.heading-border:before,
 .admin-form .panel-info .heading-border:before {
-  background-color: #4fc1e9;
+  background-color: #4CAF50;
 }
 .admin-form .bg-info {
   background-color: #3bafda;

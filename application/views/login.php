@@ -23,7 +23,13 @@
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	<![endif]-->
-
+  <?php
+  //cegah tombol back setelah login
+  header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+  header("Cache-Control: post-check=0, pre-check=0", false);
+  header("Pragma: no-cache");
+  header('Content-Type: text/html');
+   ?>
 	<style>
 		.logo, .logo:hover, .logo:active, .logo:visited {
 			color: #fff;
