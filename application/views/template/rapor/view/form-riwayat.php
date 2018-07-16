@@ -1,4 +1,5 @@
 
+<div class="panel-body pn" style="overflow-y: scroll; height: auto; width: auto;">
 <table class="table table-bordered">
 	<thead>
 		<tr>
@@ -25,3 +26,4 @@
 		<?php } ?>
 	</tbody>
 </table>
+</div>

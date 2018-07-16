@@ -1,48 +1,48 @@
 <?php
 	$total = array();
-	
+
 	// cek jika ada yg punya deskripsi
 	$is_deskriptif = false;
 	$colspan_predikat = 2;
-	if(is_array($data)) foreach($data as $row_mp) foreach($row_mp as $row_aspek) if($row_aspek->deskripsi) 
+	if(is_array($data)) foreach($data as $row_mp) foreach($row_mp as $row_aspek) if($row_aspek->deskripsi)
 	{
 		$colspan_predikat = 3;
 		$is_deskriptif = true;
 		break;
 	}
 ?>
-
+<div class="panel-body pn" style="overflow-y: scroll; height: auto; width: auto;">
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
 			<th rowspan="2" width="5%" class="text-center">No.</th>
 			<th rowspan="2">Mata Pelajaran</th>
-			<?php 
-				foreach($aspek as $col) 
+			<?php
+				foreach($aspek as $col)
 				{
 					switch($col->tipe)
 					{
 						case 'nilai_predikat' :
-							echo '<th width="'.$col->width.'" colspan="'.$colspan_predikat.'" class="text-center">'.$col->nama_aspek.'</th>'; 
+							echo '<th width="'.$col->width.'" colspan="'.$colspan_predikat.'" class="text-center">'.$col->nama_aspek.'</th>';
 						break;
 						default :
-							echo '<th width="'.$col->width.'" rowspan="2" class="text-center">'.$col->nama_aspek.'</th>'; 
+							echo '<th width="'.$col->width.'" rowspan="2" class="text-center">'.$col->nama_aspek.'</th>';
 					}
 				}
 			?>
 		</tr>
 		<tr>
-			<?php 
-				foreach($aspek as $col) 
+			<?php
+				foreach($aspek as $col)
 				{
 					switch($col->tipe)
 					{
 						case 'nilai_predikat' :
-							echo '<th class="text-center">Angka (N)</th><th class="text-center">Predikat</th>'; 
-							if($is_deskriptif) echo '<th class="text-center">Deskripsi</th>'; 
+							echo '<th class="text-center">Angka (N)</th><th class="text-center">Predikat</th>';
+							if($is_deskriptif) echo '<th class="text-center">Deskripsi</th>';
 						break;
 						default :
-							echo ''; 
+							echo '';
 						break;
 					}
 				}
@@ -53,34 +53,34 @@
 		<?php foreach($mapel as $kel) { ?>
 		<tr>
 			<td colspan="2"><b><?php echo $kel->nama; ?></b></td>
-			<?php 
-				foreach($aspek as $col) 
+			<?php
+				foreach($aspek as $col)
 				{
 					switch($col->tipe)
 					{
 						case 'nilai_predikat' :
-							echo '<td></td><td></td>'; 
-							if($is_deskriptif) echo '<td></td>'; 
+							echo '<td></td><td></td>';
+							if($is_deskriptif) echo '<td></td>';
 						break;
 						default :
-							echo '<td></td>'; 
+							echo '<td></td>';
 						break;
 					}
 				}
 			?>
 		</tr>
-		<?php 
+		<?php
 			$i = 0;
-			if(is_array($kel->mapel)) foreach($kel->mapel as $mp) { 
+			if(is_array($kel->mapel)) foreach($kel->mapel as $mp) {
 				$enc_kode_mapel = my_base64_encode($mp->kode_mp);
 		?>
 		<tr>
 			<td class="text-center"><?php echo ++$i; ?></td>
 			<td><?php echo $mp->nama_mp; ?></td>
-			<?php 
+			<?php
 				$enc_kode_point = my_base64_encode($point->kode_point);
-				
-				// restruktur nilai 
+
+				// restruktur nilai
 				$nilai = array();
 				$nilai['SKS'] = $mp->sks;
 				$nilai['KKM'] = $mp->kkm;
@@ -90,8 +90,8 @@
 				{
 					$val = isset($data[$mp->kode_mp][$col->kode_aspek]) ? $data[$mp->kode_mp][$col->kode_aspek] : '';
 					$nilai[$col->kode_aspek] = $val->nilai ? $val->nilai : 0;
-				}				
-				
+				}
+
 				foreach($aspek as $col)
 				{
 					$val = isset($data[$mp->kode_mp][$col->kode_aspek]) ? $data[$mp->kode_mp][$col->kode_aspek] : '';
@@ -125,48 +125,50 @@
 				}
 			?>
 		</tr>
-		<?php 
-			}  
-			} 
+		<?php
+			}
+			}
 		?>
 	</tbody>
 	<tfoot>
 		<tr>
 			<th colspan="2" class="text-center">Jumlah</th>
-			<?php 
-				foreach($aspek as $col) 
+			<?php
+				foreach($aspek as $col)
 				{
 					switch($col->tipe)
 					{
 						case 'nilai_predikat' :
-							echo '<th class="text-center">'.$total[$col->kode_aspek].'</th><th></th>'; 
-							if($is_deskriptif) echo '<th></th>'; 
+							echo '<th class="text-center">'.$total[$col->kode_aspek].'</th><th></th>';
+							if($is_deskriptif) echo '<th></th>';
 						break;
 						default :
-							echo '<th class="text-center">'.$total[$col->kode_aspek].'</th>'; 
+							echo '<th class="text-center">'.$total[$col->kode_aspek].'</th>';
 					}
 				}
 			?>
 		</tr>
+		<?php
+				/*
+				function SUM($kode, $total)
+				{
+					return isset($total[$kode]) ? $total[$kode] : 0;
+				}
+				$hasil = 0;
+				$rumus = $point->rumus_ip;
+				if($rumus)
+				{
+					$replace = array();
+					foreach($nilai as $key => $val) $replace[$key] = '\''.$key.'\', $total';
+					$rumus = str_replace(array_keys($replace), array_values($replace), $rumus);
+					$rumus = '$hasil = '.$rumus.';';
+					eval($rumus);
+				}
+				*/
+				if($point->rumus_ip) echo '<tr><th colspan="2" class="text-center">IP Semester</th><th colspan="8" class="text-center">[CODE:IPS]</th><tr>';
+			?>
 	</tfoot>
 </table>
 
-<?php 
-	/* 
-	function SUM($kode, $total)
-	{
-		return isset($total[$kode]) ? $total[$kode] : 0;
-	}
-	$hasil = 0;
-	$rumus = $point->rumus_ip;
-	if($rumus)
-	{
-		$replace = array();
-		foreach($nilai as $key => $val) $replace[$key] = '\''.$key.'\', $total';
-		$rumus = str_replace(array_keys($replace), array_values($replace), $rumus);
-		$rumus = '$hasil = '.$rumus.';';
-		eval($rumus);
-	} 
-	*/
-	if($point->rumus_ip) echo '<div class="IPS-container">IP Semester <span>[CODE:IPS]</span> </div>';
-?>
+
+</div>

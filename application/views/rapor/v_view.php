@@ -11,21 +11,21 @@
 			</div>
 			<div class="panel-body">
 				<div class="panel sort-disable">
-					<div class="panel-body panel-info">                                
-					<form action="" class="form-horizontal row-border frm_validation" id="frm_validation1">        
+					<div class="panel-body panel-info">
+					<form action="" class="form-horizontal row-border frm_validation" id="frm_validation1">
 						<div class="col-md-4">
 							<div class="form-group">
 							<label class="col-sm-4 control-label">Periode</label>
 							<div class="col-sm-8">
 								<select id="select_thn_ajaran" class="form-control">
-									<?php 
+									<?php
 										$detail_curr_thn_ajaran = false;
-										if($list_thn_ajaran) 
+										if($list_thn_ajaran)
 										{
 											foreach($list_thn_ajaran as $row)
 											{
 												if($row->kode_thn_ajaran == $curr_thn_ajaran) $detail_curr_thn_ajaran = $row;
-												echo '<option value="'.$row->kode_thn_ajaran.'" '.($row->kode_thn_ajaran == $curr_thn_ajaran ? 'selected="selected"' : '').'>'.$row->thn_ajaran.' '.$row->sem_ajaran.'</option>'; 
+												echo '<option value="'.$row->kode_thn_ajaran.'" '.($row->kode_thn_ajaran == $curr_thn_ajaran ? 'selected="selected"' : '').'>'.$row->thn_ajaran.' '.$row->sem_ajaran.'</option>';
 											}
 										} else
 										echo '<option value=""> Data rapor belum tersedia</option>';
@@ -33,64 +33,76 @@
 								</select>
 							</div>
 							</div>
-						</div>                                        
-						
+						</div>
+
 					</form>
 					</div>
-					<div class="panel-body pn" id="panel_frs">   
-					
+					<div class="panel-body pn" id="panel_frs">
+
 						<div class="row">
 							<div class="col-lg-12">
-			
-								
+
+
 								<div class="padding-10">
 								<?php if ($rapor) { ?>
 									<!-- RAPOR HEADER -->
-									<table class="table table-responsive table-condensed">
+									<!-- <table class="table table-responsive table-condensed">
 										<tbody>
 											<tr>
-												<th width="15%">Nama</th>
-												<td width="50%"><?php echo $siswa->nama; ?></td>
-												<th width="15%">Semester</th>
-												<td><?php echo $detail_curr_thn_ajaran->sem_ajaran; ?></td>
+												<th>Nama</th>
+												<td  colspan="3"><?php // echo $siswa->nama; ?></td>
+											</tr>
+											<tr>
+												<th>Semester</th>
+												<td  colspan="3"><?php // echo $detail_curr_thn_ajaran->sem_ajaran; ?></td>
 											</tr>
 											<tr>
 												<th>No. Induk</th>
-												<td><?php echo $siswa->no_induk; ?></td>
-												<th>Tahun Ajaran</th>
-												<td><?php echo $detail_curr_thn_ajaran->thn_ajaran; ?></td>
+												<td  colspan="3"><?php // echo $siswa->no_induk; ?></td>
 											</tr>
 											<tr>
 												<th>NISN</th>
-												<td><?php echo $siswa->nisn; ?></td>
-												<th>Kelas</th>
-												<td><?php echo $siswa->nama_kelas; ?></td>
+												<td  colspan="3"><?php // echo $siswa->nisn; ?></td>
+											</tr>
+											<tr>
+												<th>Tahun Ajaran</th>
+												<td  colspan="3"><?php //echo $detail_curr_thn_ajaran->thn_ajaran; ?></td>
+											</tr>
+											<tr>
+												<th>Jenjang</th>
+												<td  colspan="3"><?php //echo $siswa->nama_jenjang; ?></td>
 											</tr>
 											<tr>
 												<th>Sekolah</th>
-												<td><?php echo $siswa->nama_sekolah; ?></td>
+												<td  colspan="3"><?php //echo $siswa->nama_sekolah; ?></td>
+											</tr>
+											<tr>
 												<th>Jurusan</th>
-												<td><?php echo $siswa->nama_jurusan; ?></td>
+												<td  colspan="3"><?php //echo $siswa->nama_jurusan; ?></td>
+											</tr>
+											<tr>
+												<th>Kelas</th>
+												<td  colspan="3"><?php //echo $siswa->nama_kelas; ?></td>
 											</tr>
 											<tr>
 												<th></th>
 												<th></th>
 												<th></th>
 												<th></th>
-												
 											</tr>
 										</tbody>
-									</table>
-									
+									</table> -->
+
+									<div>
 									<!-- RAPOR CONTENT -->
-									<?php 
+									<?php
 										$replace = array(
 											'[CODE:IPS]' => $rapor ? $rapor->ips : '',
 										);
 										$view = str_replace(array_keys($replace), array_values($replace), $view);
-										echo $view; 
+										echo $view;
 									?>
-									
+
 									<!-- RAPOR PROPERTY -->
 									<div class="row">
 										<div class="col-md-4 text-center">
@@ -103,27 +115,28 @@
 											Malang, <?php echo $rapor ? date('d/m/Y', strtotime($rapor->tgl_publish)) : date('d/m/Y'); ?><br>
 											<?php echo $template->ttd_1; ?>
 											<br><br><br><br>
-											<?php 
+											<?php
 												$ttd1 = $rapor->nama_ttd_1 ? $rapor->nama_ttd_1 : $template->nama_ttd_1;
 												if($template->nama_ttd_1) echo $ttd1;
-												else echo $siswa->nama_wali_kelas; 
+												else echo $siswa->nama_wali_kelas;
 											?>
 										</div>
 									</div>
-									
+
 									<div class="row">
 										<div class="col-md-4 col-md-offset-4 text-center">
 											<br>
 											<?php echo $template->ttd_2; ?>
 											<br><br><br><br>
-											<?php 
+											<?php
 												$ttd2 = $rapor->nama_ttd_2 ? $rapor->nama_ttd_2 : $template->nama_ttd_2;
 												if($template->nama_ttd_2) echo $ttd2;
-												else echo $siswa->kepsek.'<br>'.$siswa->nip_kepsek; 
+												else echo $siswa->kepsek.'<br>'.$siswa->nip_kepsek;
 											?>
 											<br><br>
 										</div>
 									</div>
+								</div>
 
 									<?php } else { ?>
 									<div class="alert alert-info alert-dismissable">
@@ -132,19 +145,19 @@
 										Rapor anda masih belum tersedia atau masih belum dipublikasikan.
 									</div>
 									<?php } ?>
-								
+
 								</div>
 							</div>
 						</div>
-						
-					</div>  
+
+					</div>
 				</div>
 			</div>
 			</div>
 		</div>
 		</div>
 	</div>
-</div>    
+</div>
 
 
 <div class="tray tray-center hide">
@@ -155,21 +168,21 @@
 			<span class="panel-title"><?php echo PAGE_TITLE; ?></span>
 			<div class="col-md-3 pull-right">
 				<select id="select_thn_ajaran" class="form-control">
-					<?php 
-						if($list_thn_ajaran) 
+					<?php
+						if($list_thn_ajaran)
 						{
-							foreach($list_thn_ajaran as $row) echo '<option value="'.$row->kode_thn_ajaran.'" '.($row->kode_thn_ajaran == $curr_thn_ajaran ? 'selected="selected"' : '').'>'.$row->thn_ajaran.' '.$row->sem_ajaran.'</option>'; 
+							foreach($list_thn_ajaran as $row) echo '<option value="'.$row->kode_thn_ajaran.'" '.($row->kode_thn_ajaran == $curr_thn_ajaran ? 'selected="selected"' : '').'>'.$row->thn_ajaran.' '.$row->sem_ajaran.'</option>';
 						} else
 							echo '<option value=""> Data rapor belum tersedia</option>';
-							
+
 					?>
 				</select>
 			</div>
 		</div>
 		<div class="panel-body bg-light">
 			<!-- RAPOR HEADER -->
-			
-			
+
+
 		</div>
 	</div>
 </div>
@@ -183,7 +196,7 @@
 [section name="css"]
 <style>
 .rapor-header, .rapor-point{
-	margin-bottom: 15px;		
+	margin-bottom: 15px;
 }
 .rapor-point h4{
 	font-size: 16px;
@@ -198,7 +211,7 @@
 }
 .IPS-container span{
 	float: right;
-	display: block;		
+	display: block;
 }
 .table{
 	background: white;
@@ -226,25 +239,25 @@
 [section name="js"]
 <script>
 	$('#select_thn_ajaran').change(function(){
-		window.location = '<?php echo site_url(PAGE_ID.'/'.$kode_template); ?>/'+$(this).val();		
+		window.location = '<?php echo site_url(PAGE_ID.'/'.$kode_template); ?>/'+$(this).val();
 	})
 
 	function createGraph(selector, my_data)
 	{
 		var previousPoint2 = null;
-		
+
 		$.plot($(selector),[
 			{
 				data: my_data,
 				lines: { fill: 0.2, lineWidth: 0, },
 				color: ['#BAD9F5']
-			}, 
+			},
 			{
 				data: my_data,
 				points: {show: true, fill: true, radius: 4, fillColor: "#9ACAE6", lineWidth: 2 },
 				color: '#9ACAE6',
 				shadowSize: 1
-			}, 
+			},
 			{
 				data: my_data,
 				lines: { show: true, fill: false, lineWidth: 3 },
@@ -304,8 +317,8 @@
 			$("#tooltip").remove();
 		});
 	}
-		
-	
+
+
 	if($('.grafik_mapel').length && data_grafik)
 	{
 		$('.grafik_mapel').each(function(){
@@ -313,7 +326,7 @@
 			createGraph('[enc-kode-mp="'+enc_kode+'"]', data_grafik[enc_kode]);
 		})
 	}
-	
+
 	function showChartTooltip(x, y, xValue, yValue)
 	{
 		$('<div id="tooltip" class="chart-tooltip">' + yValue + '<\/div>').css({
@@ -328,4 +341,3 @@
 	}
 </script>
 [/section]
-
