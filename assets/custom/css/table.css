@@ -1,7 +1,7 @@
 /*
 	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
 	*/
-  
+
   #customers {
       font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
       border-collapse: collapse;
@@ -10,7 +10,8 @@
 
   #customers td, #customers th {
       border: 1px solid #ddd;
-
+      padding-top: 2px;
+      padding-bottom: 2px;
   }
 
   #customers tr:nth-child(even){background-color: #f2f2f2;}
@@ -18,8 +19,8 @@
   #customers tr:hover {background-color: #ddd;}
 
   #customers th {
-      padding-top: 12px;
-      padding-bottom: 12px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       text-align: center;
       background-color: #4CAF50;
       color: white;
@@ -172,5 +173,50 @@
     Label the data
     You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
     */
-    .total_tagihan td:nth-of-type(1):before { content: "Total"; font-weight: bold}
+    .total_tagihan td:nth-of-type(1):before { content: "Total Tagihan"; font-weight: bold}
+
+    .total_pembayaran table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .total_pembayaran thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    .total_pembayaran tr {
+      margin: 0 0 1rem 0;
+    }
+
+    .total_pembayaran tr:nth-child(odd) {
+      background: #ccc;
+    }
+
+    .total_pembayaran td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+    }
+
+    .total_pembayaran td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 0;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+
+    }
+
+    /*
+    Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+    */
+    .total_pembayaran td:nth-of-type(1):before { content: "Total Pembayaran"; font-weight: bold}
 	}

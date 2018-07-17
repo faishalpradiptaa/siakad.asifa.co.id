@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-3 pl5-md animated fadeIn">
-		<button type="button" class="btn bg-primary light btn-block compose-btn"><?php echo NAMA_LENGKAP; ?></button>
+		<button type="button" class="btn bg-primary light btn-block compose-btn" disabled><?php echo NAMA_LENGKAP; ?></button>
 		<div class="panel">
 		<div class="panel-body p10">
 

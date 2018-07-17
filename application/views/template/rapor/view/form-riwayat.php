@@ -1,5 +1,5 @@
 
-<div class="panel-body pn" style="overflow-y: scroll; height: auto; width: auto;">
+<div class="panel-body pn" style="overflow: auto; height: auto; width: auto;">
 <table class="table table-bordered">
 	<thead>
 		<tr>

@@ -1,7 +1,7 @@
 <div class="admin-panels mn pn">
 	<div class="col-sm-12 admin-grid">
 		<!-- Panel with All Options -->
-		<div class="row">
+
 		<div class="col-md-12 admin-grid">
 			<div class="panel sort-disable panel-info" data-panel-color="false" data-panel-title="false" data-panel-remove="false" data-panel-collapse="false">
 			<div class="panel-heading">

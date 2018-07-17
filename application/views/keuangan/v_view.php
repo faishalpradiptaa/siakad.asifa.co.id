@@ -4,7 +4,7 @@
 <div class="admin-panels mn pn">
 	<div class="admin-grid">
 		<!-- Panel with All Options -->
-		<div class="row">
+		<div class="row" >
 		<div class="col-xs-12 admin-grid">
 			<div class="panel sort-disable panel-info" data-panel-color="false" data-panel-title="false" data-panel-remove="false" data-panel-collapse="false">
 			<div class="panel-heading">
@@ -20,30 +20,27 @@
 							<li class=""><a class="fw600" href="#tab-pembayaran" data-toggle="tab">Riwayat Pembayaran </a></li>
 						</ul>
 					</div>
-					<div class="panel-body" style="overflow-y: scroll; height: 500px; width: auto;">
+					<div class="panel-body" style="overflow: auto; height: auto; width: auto;">
 						<div class="tab-content pn br-n">
 							<div id="tab-tanggungan" class="tab-pane active">
-								<div class="total_tagihan">
-									<table role="table">
+								<div class="total_tagihan  visible-xs visible-sm">
+									<table role="table" id="customers">
 										<thead role="rowgroup">
-										<tr role="row">
-											<th role="columnheader">Total</th>
-											</tr>
-											</thead>
-											<tbody role="rowgroup">
-												<tr role="row">
+										</thead>
+										<tbody role="rowgroup">
+												<tr role="row" style="background-color: #4CAF50">
 												<?php foreach($tagihan as $row) if(strtolower($row->status_tagihan) <> 'lunas' || $row->tanggungan)
 													{
 														$total += $row->tanggungan;
 													}?>
 													<td role="cell" ><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></td>
 												</tr>
-											</tbody>
+										</tbody>
 									</table>
 								</div>
 								<div class="panel-heading"><b>Rincian</b></div>
 								<div class="tabel_tagihan">
-									<table id="customers" "role="table">
+									<table id="customers" role="table">
   									<thead role="rowgroup">
     								<tr role="row">
 	      							<th role="columnheader">Kode</th>
@@ -69,20 +66,26 @@
 									    </tr>
 											<tr></tr>
 									    <?php } ?>
+											<tr class="visible-md visible-lg">
+												<th>Total Tagihan</th>
+												<td colspan="3" class="text-center"><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></td>
+											</tr>
 									  </tbody>
 									</table>
 								</div>
 							</div>
 							<div id="tab-pembayaran" class="tab-pane">
-								<div  class="total_tagihan">
-									<table role="table">
+								<div  class="total_pembayaran visible-xs visible-sm">
+									<table role="table" id="customers">
 										<thead role="rowgroup">
+											<tr>
+											</tr>
 										<tr role="row">
 											<th role="columnheader">Total</th>
 											</tr>
 											</thead>
 											<tbody role="rowgroup">
-												<tr role="row">
+												<tr role="row" style="background-color: #4CAF50">
 												<?php
 													$i=0;
 													$total = 0;
@@ -97,7 +100,7 @@
 								</div>
 								<div class="panel-heading"><b>Rincian</b></div>
 								<div>
-									<table id="customers"class="tabel_pembayaran">
+									<table id="customers" class="tabel_pembayaran">
 										<thead role="rowgroup">
     								<tr role="row">
 	      							<th role="columnheader">Kode</th>
@@ -126,23 +129,14 @@
 									    </tr>
 											<tr></tr>
 									    <?php } ?>
+											<tr class="visible-md visible-lg">
+												<th>Total Pembayaran</th>
+												<td colspan="5" class="text-center"><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></td>
+											</tr>
 									  </tbody>
 									</table>
 								</div>
-								<div  class="total_tagihan">
-									<table role="table">
-										<thead role="rowgroup">
-    								<tr role="row">
-	      							<th role="columnheader">Total</th>
-										  </tr>
-										  </thead>
-											<tbody role="rowgroup">
-												<tr role="row">
-													<td role="cell"><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></td>
-												</tr>
-											</tbody>
-									</table>
-								</div>
+
 							</div>
 						</div>
 
