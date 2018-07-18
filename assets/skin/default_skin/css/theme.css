@@ -8153,7 +8153,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #2363b6;
+  color: #4CAF50;
   text-decoration: underline;
 }
 a:focus {
@@ -17335,7 +17335,7 @@ body.sidebar-collapsed #sidebar:before {
 .navbar {
   z-index: 1030;
   margin-bottom: 0;
-  height: 60px;
+  height: 50px;
   color: #666;
   background-color: #FFF;
   border-radius: 0;
@@ -17366,7 +17366,7 @@ body.sidebar-collapsed #sidebar:before {
   font-weight: 600;
   padding-top: 20px;
   padding-bottom: 20px;
-  height: 59px;
+  height: 45px;
   max-height: 59px;
 }
 .navbar .nav > li.open > a,
@@ -17853,7 +17853,7 @@ body.sb-top #toggle_sidemenu_t {
 =========================================================== */
 .navbar .nav > li.dropdown.open .dropdown-menu,
 .navbar .nav > li.dropdown .open .dropdown-menu {
-  border-top-color: #4a89dc;
+  border-top-color: #4CAF50;
 }
 .navbar .nav > li.dropdown.open .dropdown-menu:after,
 .navbar .nav > li.dropdown .open .dropdown-menu:after {
@@ -18849,14 +18849,15 @@ body.tray-rescale .tray-right:hover {
 /* Sidebar Container */
 #sidebar_left {
   color: #70ca63;
-  font-size: 13px;
-  position: absolute;
+  font-size: 10px;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 230px;
+  width: 150px;
   min-height: 100%;
   padding-top: 60px;
   padding-bottom: 40px;
+  overflow-y: scroll;
 }
 /* Sidebar Content Container */
 .sidebar-left-content {
@@ -19512,7 +19513,7 @@ body.sb-l-m #sidebar_left .sidebar-stat {
 }
 /* Only Icon is showing - Modify Padding to fit */
 body.sb-l-m .sidebar-menu > li {
-  padding: 7px 0;
+  padding: 3px 0;
 }
 /* Menu will be converted to on:hover - It requires overflow */
 body.sb-l-m .sidebar-menu > li > a {
@@ -19657,7 +19658,7 @@ body.sb-l-m .navbar-brand {
 /* Sub-Menu Item - Border Color:hover */
 .sidebar-menu > li > ul > li:hover > a:after,
 .sidebar-menu > li > ul > li:focus > a:after {
-  background: #4a89dc;
+  background: #4CAF50;
 }
 /* Sub-Menu Active Item - BG/Text Color */
 .sidebar-menu > li > ul > li.active > a {
@@ -19667,12 +19668,12 @@ body.sb-l-m .navbar-brand {
 /* Sub-Menu Active Item - Icon Color */
 .sidebar-menu > li > ul > li.active > a > span:nth-child(1),
 .sidebar-menu > li > ul > li > a.menu-open > span:nth-child(1) {
-  color: #4a89dc;
+  color: #4CAF50;
 }
 /* Sub-Menu Active Item - Border Color */
 .sidebar-menu > li > ul > li.active > a:after,
 .sidebar-menu > li > ul > li > a.menu-open:after {
-  background: #4a89dc;
+  background: #4CAF50;
 }
 /* Multi-Menu Item - BG Color */
 .sidebar-menu > li > ul > li ul {
@@ -19889,7 +19890,7 @@ body.sb-l-m.mobile-view .nano > .nano-pane {
   body.sb-l-m .sidebar-menu > li > a > span:nth-child(1) {
     left: -1px;
     width: 45px;
-    font-size: 18px;
+    font-size: 15px;
   }
   /* Sidebar-menu Top Level - Title */
   body.sb-l-m .sidebar-menu > li > a > .sidebar-title {

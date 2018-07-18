@@ -16,7 +16,7 @@
 
 <!-- Theme CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/skin/default_skin/css/theme.css'); ?>">
-
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/skin/css_jodie/skins/_all-skins.css'); ?>">
 <!-- Admin Forms CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/admin-tools/admin-forms/css/admin-forms.css'); ?>">
 
@@ -69,9 +69,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
 			</li>
-			<li class="menu-divider hidden-xs">
-				<i class="fa fa-circle"></i>
-			</li>
+
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
 					<img src="<?php echo base_url('assets/img/avatars/placeholder.png'); ?>" alt="avatar" class="mw30 br64 mr15">
@@ -107,10 +105,10 @@
 	<!-- End: Header -->
 
 	<!-- Start: Sidebar -->
-	<aside id="sidebar_left" class="nano nano-primary">
+	<aside id="sidebar_left">
 
 		<!-- Start: Sidebar Left Content -->
-		<div class="sidebar-left-content nano-content">
+		<div class="">
 
 			<!-- Start: Sidebar Header -->
 			<header class="sidebar-header">
@@ -119,7 +117,7 @@
 			<!-- End: Sidebar Header -->
 
 			<!-- Start: Sidebar Menu -->
-			<ul class="nav sidebar-menu">
+			<ul class="nav sidebar-menu navbar-fixed-left">
 				<li class="sidebar-label pt20">Menu</li>
 				<li>
 					<a href="<?php echo site_url(); ?>">
@@ -181,9 +179,9 @@
 			<!-- End: Sidebar Menu -->
 
 			<!-- Start: Sidebar Collapse Button -->
-			<div class="sidebar-toggle-mini">
-				<a href="#">
-					<span class="fa fa-sign-out"></span>
+			<div class="sidebar-toggle-mini" id="sidebar-toggle-mini">
+				<a id="tutup" href="#">
+					<span class=""></span>
 				</a>
 			</div>
 			<!-- End: Sidebar Collapse Button -->
@@ -306,6 +304,21 @@
 	{
 		$(this).find('.form-control').first().focus();
 	});
+
+	$('#toggle_sidemenu_l').click(function(e){
+    e.stopPropagation();
+     $('#').toggleClass('show-menu');
+	});
+
+	$('#sidebar_left').click(function(e){
+	    e.stopPropagation();
+	});
+
+	$('body,html').click(function(e){
+	       $('#tutup span').trigger('click');
+
+	});
+
 </script>
 
 <!-- BEGIN PAGE LEVEL SCRIPT -->

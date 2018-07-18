@@ -122,7 +122,7 @@
 
 
 
-									<div class="col-sm-7 br-l br-grey pl00">
+									<div class="col-sm-5 br-l br-grey pl00">
 										<div class="panel-body pn" style="overflow: auto; height: auto; width: auto;">
 											<table class="table mbn tc-med-1 tc-bold-last tc-fs13-last">
 												<thead>
