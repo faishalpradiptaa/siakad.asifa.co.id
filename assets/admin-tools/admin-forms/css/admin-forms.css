@@ -211,6 +211,7 @@
 .admin-form .gui-input,
 .admin-form .gui-textarea {
   padding: 10px;
+  border-radius: 4px;
 }
 .admin-form .select,
 .admin-form .gui-input,
@@ -1197,19 +1198,20 @@
   Primary Button
 -===================================================================*/
 .admin-form .btn-primary {
-  background-color: #3bafda;
+  background-color: #4CAF50;
 }
 .admin-form .btn-primary:hover,
 .admin-form .btn-primary:focus {
-  background-color: #3bafda;
+  background-color: #4CAF50;
 }
 .admin-form .btn-primary:active {
-  background-color: #3bafda;
+  background-color: #4CAF50;
 }
 .admin-form .btn-primary,
 .admin-form .btn-primary:hover,
 .admin-form .btn-primary:focus,
 .admin-form .btn-primary:active {
+  background-color: #4CAF50
   color: #fff;
   text-shadow: 0 1px rgba(0, 0, 0, 0.08);
 }
@@ -2817,6 +2819,7 @@
   border: 0;
   border-top: 1px solid #DDD;
   background: #f2f2f2;
+  border-radius: 4px;
 }
 /*==================================================================
   Progress Bars
@@ -2913,10 +2916,11 @@
 }
 .admin-form .btn-primary {
   background-color: #4CAF50;
+  border-radius: 4px;
 }
 .admin-form .btn-primary:hover,
 .admin-form .btn-primary:focus {
-  background-color: #5d9cec;
+  background-color: #4CAF50;
   border-color: #5d9cec;
 }
 .admin-form .btn-primary:active {
@@ -3003,7 +3007,7 @@
   background: #9fc1ed !important;
 }
 .admin-form.theme-primary .ui-datepicker .ui-state-active {
-  background: #4a89dc !important;
+  background: #4CAF50 !important;
 }
 .admin-form.theme-primary .ui-datepicker .ui-timepicker-div .ui-slider .ui-slider-handle.ui-state-active {
   background: #FFF !important;
@@ -3022,7 +3026,8 @@
   background-color: #2e76d6;
 }
 .admin-form .panel-info > .panel-heading {
-  border-top-color: #4fc1e9;
+  border-top-color: #4CAF50;
+  border-radius: 4px;
 }
 .admin-form .panel-info > .panel-heading:before {
   background-color: #4fc1e9;
