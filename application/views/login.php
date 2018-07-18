@@ -65,7 +65,8 @@
           <div class="row mb15 table-layout">
             <div class="col-xs-12 va-m pln text-center">
               <a href="<?php echo base_url(); ?>" class="logo">
-                <!--img src="<?php echo base_url('assets/custom/img/logo-small.png'); ?>" title="Logo" class="img-responsive"-->
+                <img src="assets/custom/img/logo-small.png" style="max-width:50%;height:auto;width:auto">
+                <!--img src="<?php //echo base_url('assets/custom/img/logo-small.png'); ?>" title="Logo" class="img-responsive"-->
 								SIAKAD ASIFA
               </a>
             </div>
@@ -122,8 +123,8 @@
 
 
 
-									<div class="col-sm-5 br-l br-grey pl00">
-										<div class="panel-body pn" style="overflow: auto; height: auto; width: auto;">
+									<div class="col-sm-7 br-l br-grey pl00">
+										<div class="panel-body pn" style="overflow: auto; height: 200px; width: auto;">
 											<table class="table mbn tc-med-1 tc-bold-last tc-fs13-last">
 												<thead>
 													<tr class="hidden">

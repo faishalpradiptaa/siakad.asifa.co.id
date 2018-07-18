@@ -72,7 +72,13 @@
 
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
-					<img src="<?php echo base_url('assets/img/avatars/placeholder.png'); ?>" alt="avatar" class="mw30 br64 mr15">
+					<img src="<?php
+					$src=base_url()."/assets/img/avatars/".NO_INDUK.".png";
+					if(@getimagesize($src)) {
+						echo base_url()."/assets/img/avatars/".NO_INDUK.".png";
+					}else{
+						echo base_url()."/assets/img/avatars/placeholder.png";
+					} ?>" alt="avatar" class="mw30 br64 mr15">
 					<?php echo NAMA_LENGKAP ? NAMA_LENGKAP : USERNAME; ?>
 					<span class="caret caret-tp hidden-xs"></span>
 				</a>

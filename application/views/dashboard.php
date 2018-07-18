@@ -9,7 +9,15 @@
 				<div class="table-layout">
 					<div class="avatar-view" style="width: 100%; height: auto;border-radius:0px;border:4px solid #fff;">
 					<a href="#" data-ip-modal="#avatarModal">
-						<img width="100%" id="profile_picture" src="<?php echo base_url(); ?>/assets/img/avatars/placeholder.png" alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="Profile picture"/>
+						<img width="100%" id="profile_picture"
+						src="<?php
+						$src=base_url()."/assets/img/avatars/".NO_INDUK.".png";
+						if(@getimagesize($src)) {
+							echo base_url()."/assets/img/avatars/".NO_INDUK.".png";
+						}else{
+							echo base_url()."/assets/img/avatars/placeholder.png";
+						} ?>"
+						alt="Avatar" data-toggle="tooltip" data-placement="bottom" title="Profile picture"/>
 					</a>
 					</div>
 				</div>

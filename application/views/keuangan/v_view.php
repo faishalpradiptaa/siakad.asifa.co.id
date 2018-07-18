@@ -20,7 +20,7 @@
 							<li class=""><a class="fw600" href="#tab-pembayaran" data-toggle="tab">Riwayat Pembayaran </a></li>
 						</ul>
 					</div>
-					<div class="panel-body" style="overflow: auto; height: auto; width: auto;">
+					<div class="panel-body" style="overflow: auto; height: 500px; width: auto;">
 						<div class="tab-content pn br-n">
 							<div id="tab-tanggungan" class="tab-pane active">
 								<div class="total_tagihan  visible-xs visible-sm">
