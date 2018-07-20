@@ -17171,6 +17171,8 @@ table.tc-va-b-last tbody td:last-child {
 html {
   height: 100%;
   background: #fff;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 body {
   width: 100%;
@@ -17180,6 +17182,7 @@ body {
   padding: 0;
   background: #e9e9e9;
   overflow-x: hidden;
+  max-width: 100%;
   /* Fix for webkit rendering */
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -18854,14 +18857,15 @@ body.tray-rescale .tray-right:hover {
 #sidebar_left {
   color: #70ca63;
   font-size: 10px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 150px;
   min-height: 100%;
   padding-top: 60px;
   padding-bottom: 40px;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 /* Sidebar Content Container */
 .sidebar-left-content {

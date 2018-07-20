@@ -16,7 +16,6 @@
 
 <!-- Theme CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/skin/default_skin/css/theme.css'); ?>">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/skin/css_jodie/skins/_all-skins.css'); ?>">
 <!-- Admin Forms CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/admin-tools/admin-forms/css/admin-forms.css'); ?>">
 
@@ -299,6 +298,27 @@
 
 		}
 
+		$('#toggle_sidemenu_l').click(function(e){
+		  e.stopPropagation();
+		 $('#').toggleClass('show-menu');
+		});
+
+		$('#sidebar_left').click(function(e){
+		    e.stopPropagation();
+		});
+
+			$('body,html').click(function(e){
+		      $('#tutup span').trigger('click');
+
+		});
+
+		var fixed = document.getElementById('sidebar_left');
+
+		fixed.addEventListener('touchmove', function(e) {
+
+		        e.preventDefault();
+
+		}, false);
 	});
 
 	$('body').on('hidden.bs.modal', '#main-modal-lg, #main-modal-md', function () {
@@ -311,19 +331,6 @@
 		$(this).find('.form-control').first().focus();
 	});
 
-$('#toggle_sidemenu_l').click(function(e){
-  e.stopPropagation();
- $('#').toggleClass('show-menu');
-});
-
-$('#sidebar_left').click(function(e){
-    e.stopPropagation();
-});
-
-	$('body,html').click(function(e){
-      $('#tutup span').trigger('click');
-
-});
 
 </script>
 
