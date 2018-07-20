@@ -1,3 +1,4 @@
+
 <div class="row">
 	<div class="col-md-4">
 		<h4 class="page-header mtn br-light text-muted hidden">User Info</h4>
@@ -57,10 +58,11 @@
 
 	<div class="col-md-8">
 
-		<div class="tab-block psor">
-			<ul class="nav nav-tabs">
-				<li class="active"> <a href="#tab-identitas" data-toggle="tab"> <i class="glyphicons glyphicons-user"></i> Data Pribadi</a></li>
-				<li><a href="#tab-orangtua" data-toggle="tab"><i class="glyphicons glyphicons-parents"></i> Orang Tua</a></li>
+		<div class="panel">
+		
+			<ul class="nav nav-tabs nav-justified">
+				<li class="active"> <a class="fw600" href="#tab-identitas" data-toggle="tab"> <i class="glyphicons glyphicons-user"></i> Data Pribadi</a></li>
+				<li class=""> <a class="fw600" href="#tab-orangtua" data-toggle="tab"><i class="glyphicons glyphicons-parents"></i> Orang Tua</a></li>
 			</ul>
 			<div class="tab-content">
 				<!-- Stats Top Graph Bot -->

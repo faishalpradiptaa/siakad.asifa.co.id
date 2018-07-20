@@ -14,12 +14,12 @@
 			</div>
 			<div class="panel-body">
 				<div class="panel sort-disable">
-					<div class="nav">
+					
 						<ul class="nav nav-tabs nav-justified">
 							<li class="active"><a class="fw600" href="#tab-tanggungan" data-toggle="tab">Tanggungan</a></li>
 							<li class=""><a class="fw600" href="#tab-pembayaran" data-toggle="tab">Riwayat Pembayaran </a></li>
 						</ul>
-					</div>
+
 					<div class="panel-body" style="overflow: auto; height: 500px; width: auto;">
 						<div class="tab-content pn br-n">
 							<div id="tab-tanggungan" class="tab-pane active">

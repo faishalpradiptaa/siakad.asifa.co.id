@@ -5,9 +5,9 @@
 	if($error) echo '<div class="alert alert-danger">'.$error.'</div>';
 	if($success) echo '<div class="alert alert-success">'.$success.'</div>';
 ?>
-<div class="tab-block psor">
+<div class="panel">
 	<form action="" method="POST">
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs nav-justified">
 			<li class="active"> <a href="#tab-identitas" data-toggle="tab"> <i class="glyphicons glyphicons-user"></i> Data Pribadi</a></li>
 			<li><a href="#tab-orangtua" data-toggle="tab"><i class="glyphicons glyphicons-parents"></i> Orang Tua</a></li>
 			<li><a href="#tab-password" data-toggle="tab"><i class="fa fa-key"></i> Ganti Password</a></li>

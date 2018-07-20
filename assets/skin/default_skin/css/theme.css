@@ -11058,6 +11058,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav {
   margin-bottom: 0;
   padding-left: 0;
+  padding-bottom :0;
   list-style: none;
 }
 .nav > li {
@@ -11112,9 +11113,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border: 1px solid transparent;
   border-radius: 1px 1px 0 0;
 }
+
 .nav-tabs > li > a:hover {
   border-color: #eeeeee #eeeeee #dddddd;
 }
+
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
@@ -11124,24 +11127,29 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom-color: transparent;
   cursor: default;
 }
+
 .nav-tabs.nav-justified {
   width: 100%;
   border-bottom: 0;
+  display:flex;
 }
+
 .nav-tabs.nav-justified > li {
   float: none;
+  display:flex;
+  flex:1;
 }
 .nav-tabs.nav-justified > li > a {
   text-align: center;
-  margin-bottom: 5px;
+  flex: 1;
 }
 .nav-tabs.nav-justified > .dropdown .dropdown-menu {
   top: auto;
   left: auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 300px) {
   .nav-tabs.nav-justified > li {
-    display: table-cell;
+    display: flex;
     width: 1%;
   }
   .nav-tabs.nav-justified > li > a {
@@ -11153,14 +11161,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-radius: 4px;
   border: 1px solid #dddd;
 }
+
 .nav-tabs.nav-justified > .active > a,
 .nav-tabs.nav-justified > .active > a:hover,
-.nav-tabs.nav-justified > .active > a:focus {
+.nav-tabs.nav-justified > .active > a:focus
+{
   border: 1px solid #4CAF50;
   border-radius: 4px;
-
 }
-@media (min-width: 768px) {
+
+@media (min-width: 300px) {
   .nav-tabs.nav-justified > li > a {
     border-bottom: 1px solid #dddddd;
     border-radius: 1px 1px 0 0;
@@ -11171,6 +11181,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     border-bottom-color: #ffffff;
   }
 }
+
+
 .nav-pills.nav-pills-sm > li > a {
   font-size: 12px;
   padding: 4px 8px;
@@ -13270,7 +13282,7 @@ button.close {
 }
 /* nav tab item link */
 .tab-block .nav-tabs.nav-justified > li > a {
-  padding: 11px;
+  padding:11px;
 }
 /* tabs justified - bottom */
 .tab-block .tab-content + .nav-tabs.nav-justified {
@@ -24699,4 +24711,8 @@ body.timeline-page .panel-clone {
   #content .panel .panel-body {
     min-width: 0 !important;
   }
+}
+
+.nav-tabs.half-width {
+  width: 50%;
 }
