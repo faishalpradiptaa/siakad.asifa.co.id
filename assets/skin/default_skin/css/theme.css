@@ -9544,7 +9544,7 @@ th {
   border-top: 2px solid #eeeeee;
 }
 .table tbody > tr:first-child > td {
-  border-top: 0;
+  border-top: 1px solid #eeeeee;
 }
 .table .table {
   margin-bottom: 0;

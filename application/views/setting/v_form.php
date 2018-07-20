@@ -13,7 +13,7 @@
 			<li><a href="#tab-password" data-toggle="tab"><i class="fa fa-key"></i> Ganti Password</a></li>
 		</ul>
 		<div class="tab-content">
-			<div id="tab-identitas"" class="tab-pane active p15">
+			<div id="tab-identitas"" class="tab-pane active">
 				<div class="panel">
 					<div class="panel-heading">
 						<span class="panel-icon"><i class="glyphicons glyphicons-user"></i>

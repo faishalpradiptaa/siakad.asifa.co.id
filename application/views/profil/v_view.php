@@ -66,7 +66,7 @@
 			</ul>
 			<div class="tab-content">
 				<!-- Stats Top Graph Bot -->
-				<div id="tab-identitas" class="tab-pane active p15">
+				<div id="tab-identitas" class="tab-pane active">
 					<div class="panel">
 						<div class="panel-heading">
 							<span class="panel-icon"><i class="glyphicons glyphicons-user"></i>
