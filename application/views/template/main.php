@@ -311,19 +311,19 @@
 		$(this).find('.form-control').first().focus();
 	});
 
-	$('#toggle_sidemenu_l').click(function(e){
-    e.stopPropagation();
-     $('#').toggleClass('show-menu');
-	});
+	//$('#toggle_sidemenu_l').click(function(e){
+  //  e.stopPropagation();
+  //   $('#').toggleClass('show-menu');
+	//});
 
-	$('#sidebar_left').click(function(e){
-	    e.stopPropagation();
-	});
+	//$('#sidebar_left').click(function(e){
+	//    e.stopPropagation();
+	//});
 
-	$('body,html').click(function(e){
-	       $('#tutup span').trigger('click');
+//	$('body,html').click(function(e){
+	//       $('#tutup span').trigger('click');
 
-	});
+	//});
 
 </script>
 
