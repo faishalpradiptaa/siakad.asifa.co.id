@@ -9,7 +9,7 @@
 	<h4 class="mt30"> Mata Pelajaran </h4>
 
 	<hr class="mv15 br-light">
-	
+
 	<?php
 		$mp = array();
 		$events = array();
@@ -42,7 +42,7 @@
 			}
 		?>
 	</ul>
-	
+
 	<div class="row margin-t-20">
 		<div class="col-md-12">
 			<a href="<?php echo site_url(PAGE_ID.'/all')?>" class="btn btn-default fullwidth"> <i class="fa fa-flask margin-r-5"></i> Semua Mapel</a>
@@ -95,9 +95,9 @@
 		// Init FullCalendar Plugin
 		Calendar.fullCalendar({
 			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
+				//left: 'month,agendaWeek,agendaDay',
+				//center: 'month,agendaWeek,agendaDay',
+				//right: 'title'
 			},
 			editable: false,
 			droppable: false,
@@ -117,7 +117,7 @@
       },
 
 		});
-		
+
 		Picker.monthpicker({
 			prevText: '<i class="fa fa-chevron-left"></i>',
 			nextText: '<i class="fa fa-chevron-right"></i>',
@@ -128,9 +128,8 @@
 			}
 		});
 
-		
+
 
 	});
 </script>
 [/section]
-

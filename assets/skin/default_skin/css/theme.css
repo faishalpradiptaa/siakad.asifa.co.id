@@ -18857,7 +18857,7 @@ body.tray-rescale .tray-right:hover {
 #sidebar_left {
   color: #70ca63;
   font-size: 10px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 150px;

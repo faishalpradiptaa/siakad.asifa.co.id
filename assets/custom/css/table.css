@@ -23,7 +23,7 @@
       padding-top: 10px;
       padding-bottom: 10px;
       text-align: center;
-      background-color: #4CAF50;
+      background-color: #dddd;
       color: white;
   }
 
@@ -50,7 +50,7 @@
     }
 
     .tabel_tagihan tr:nth-child(odd) {
-      background: #4CAF50;
+      background: maroon;
     }
 
 		.tabel_tagihan td {
@@ -97,7 +97,7 @@
     }
 
     .tabel_pembayaran tr:nth-child(odd) {
-      background: #4CAF50;
+      background: teal;
     }
 
     .tabel_pembayaran td {

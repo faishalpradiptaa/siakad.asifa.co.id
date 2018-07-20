@@ -28,7 +28,7 @@
 										<thead role="rowgroup">
 										</thead>
 										<tbody role="rowgroup">
-												<tr role="row" style="background-color: #4CAF50">
+												<tr role="row" style="background-color: red">
 												<?php foreach($tagihan as $row) if(strtolower($row->status_tagihan) <> 'lunas' || $row->tanggungan)
 													{
 														$total += $row->tanggungan;
@@ -85,7 +85,7 @@
 											</tr>
 											</thead>
 											<tbody role="rowgroup">
-												<tr role="row" style="background-color: #4CAF50">
+												<tr role="row" style="background-color: blue">
 												<?php
 													$i=0;
 													$total = 0;
