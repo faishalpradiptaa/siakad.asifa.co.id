@@ -76,10 +76,12 @@
 												<th>Sekolah</th>
 												<td  colspan="3"><?php echo $siswa->nama_sekolah; ?></td>
 											</tr>
-											<tr>
-												<th>Jurusan</th>
-												<td  colspan="3"><?php echo $siswa->nama_jurusan; ?></td>
-											</tr>
+											<?php
+												if($ambil_kelas->nama_jenjang=="SMA"){
+													echo "<tr><th>Jurusan</th>
+													<td>".$ambil_kelas->nama_jurusan."</td></tr>";
+												}
+											?>
 											<tr>
 												<th>Kelas</th>
 												<td  colspan="3"><?php echo $siswa->nama_kelas; ?></td>
