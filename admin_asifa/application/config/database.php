@@ -49,8 +49,8 @@ $active_group = 'local';
 $active_record = TRUE;
 
 $db['local']['hostname'] = 'localhost';
-$db['local']['username'] = 'root';
-$db['local']['password'] = '';
+$db['local']['username'] = 'asifacoi_siak8';
+$db['local']['password'] = 'E=u,[iq!E(C_';
 $db['local']['database'] = 'asifacoi_siak8';
 $db['local']['dbdriver'] = 'mysqli';
 $db['local']['dbprefix'] = '';
