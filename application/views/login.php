@@ -78,7 +78,7 @@
             </div>
 
             <!-- end .form-header section -->
-            <form method="post" action="<?php echo site_url('login'); ?>" >
+            <form method="post" action="<?php echo site_url('login'); ?>">
               <div class="panel-body bg-light p30">
 								<?php
 									$error = $this->session->flashdata('result_login');
@@ -116,7 +116,7 @@
                     </div>
 
                     <div class="section">
-                        <button type="submit" class="button btn-primary form-control fs18 mb10">Sign In</button>
+                        <button type="submit" class="button btn-primary form-control fs18 mb10" onClick="saveUP()" id="signin">Sign In</button>
                     </div>
                     <!-- end section -->
                   </div>
@@ -205,6 +205,13 @@
   <!-- jQuery -->
   <script src="<?php echo base_url('assets/vendor/jquery/jquery-1.11.1.min.js'); ?>"></script>
   <script src="<?php echo base_url('assets/vendor/jquery/jquery_ui/jquery-ui.min.js'); ?>"></script>
+  <script type="text/javascript">
+    function saveUP() {
+        var u = document.getElementById("username").value;
+        var p = document.getElementById("password").value;
+        Android.saveUP(u,p);
+    }
+  </script>
 
   <!-- CanvasBG Plugin(creates mousehover effect) -->
   <script src="<?php echo base_url('assets/vendor/plugins/canvasbg/canvasbg.js'); ?>"></script>
@@ -234,7 +241,7 @@
   });
   </script>
 
-  <!-- END: PAGE SCRIPTS -->
+  <!-- END: PAGE SCRIPTSx -->
 
 </body>
 

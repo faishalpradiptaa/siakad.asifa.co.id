@@ -5,15 +5,15 @@
 	if($error) echo '<div class="alert alert-danger">'.$error.'</div>';
 	if($success) echo '<div class="alert alert-success">'.$success.'</div>';
 ?>
-<div class="tab-block psor">
+<div class="panel">
 	<form action="" method="POST">
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs nav-justified">
 			<li class="active"> <a href="#tab-identitas" data-toggle="tab"> <i class="glyphicons glyphicons-user"></i> Data Pribadi</a></li>
 			<li><a href="#tab-orangtua" data-toggle="tab"><i class="glyphicons glyphicons-parents"></i> Orang Tua</a></li>
 			<li><a href="#tab-password" data-toggle="tab"><i class="fa fa-key"></i> Ganti Password</a></li>
 		</ul>
 		<div class="tab-content">
-			<div id="tab-identitas"" class="tab-pane active p15">
+			<div id="tab-identitas"" class="tab-pane active">
 				<div class="panel">
 					<div class="panel-heading">
 						<span class="panel-icon"><i class="glyphicons glyphicons-user"></i>
@@ -72,7 +72,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="tab-orangtua" class="tab-pane p15">
+			<div id="tab-orangtua" class="tab-pane">
 				<div class="panel">
 					<div class="panel-heading">
 						<span class="panel-icon"><i class="glyphicons glyphicons-parents"></i>
@@ -123,7 +123,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="tab-password" class="tab-pane p15">
+			<div id="tab-password" class="tab-pane">
 				<div class="panel">
 					<div class="panel-heading">
 						<span class="panel-icon"><i class="fa fa-key"></i>
