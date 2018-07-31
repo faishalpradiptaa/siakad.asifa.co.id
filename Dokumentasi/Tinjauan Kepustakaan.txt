@@ -1,0 +1,12 @@
+1. Konsep Sistem Informasi
+2. Sistem Informasi Akademik
+3. Android
+4. Web view
+5. HTTP
+6. CSS
+7. Jquery
+8. Mysql
+5. UML (Unified Modelling Language)
+ -Diagram Use Case
+ -Diagram Class
+ -Diagram Sequence
