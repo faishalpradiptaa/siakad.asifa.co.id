@@ -72,7 +72,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="tab-orangtua" class="tab-pane p15">
+			<div id="tab-orangtua" class="tab-pane">
 				<div class="panel">
 					<div class="panel-heading">
 						<span class="panel-icon"><i class="glyphicons glyphicons-parents"></i>
@@ -123,7 +123,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="tab-password" class="tab-pane p15">
+			<div id="tab-password" class="tab-pane">
 				<div class="panel">
 					<div class="panel-heading">
 						<span class="panel-icon"><i class="fa fa-key"></i>

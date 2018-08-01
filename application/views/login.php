@@ -241,7 +241,7 @@
   });
   </script>
 
-  <!-- END: PAGE SCRIPTS -->
+  <!-- END: PAGE SCRIPTSx -->
 
 </body>
 
