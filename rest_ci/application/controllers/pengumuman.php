@@ -19,6 +19,7 @@ class pengumuman extends REST_Controller {
   			->where('publish_date <= DATE(NOW())')
   			->order_by('publish_date', 'DESC')
   			->order_by('id_pengumuman', 'DESC')
+        ->limit(5)
   			->get('tb_app_tr_pengumuman tb')
   			->result();
       $this->response($pengumuman, 200);
