@@ -4,14 +4,16 @@ class mod_siswa extends MY_Model
 {
 	public function getProfile(){
 		return $this->db
-		->select('sw.*, ag.*')
+		->select('sw.no_induk,sw.nisn,sw.nama,sw.tgl_lahir,sw.alamat,sw.nama_ayah,sw.telp_ayah,sw.nama_ibu,sw.telp_ibu,sw.telp,sw.angkatan,sw.email , ag.nama_agama')
+		->distinct()
 		->join('tb_akd_rf_agama ag', 'ag.kode_agama=sw.agama')
-		->where('no_induk', NO_INDUK)
-		->get('tb_akd_rf_siswa sw')->row();
+		->where('no_induk',NO_INDUK)
+		->get('tb_akd_rf_siswa sw')
+		->row();
 	}
 	public function getAmbilKelas(){
 		return $this->db
-		->select('ak.*,jj.*,jr.*,sk.*,kl.*')
+		->select('ak.no_induk,jj.nama_jenjang,jr.nama_jurusan,sk.nama_sekolah,kl.nama_kelas')
 		->join('tb_akd_rf_jenjang jj', 'jj.kode_jenjang=ak.kode_jenjang')
 		->join('tb_akd_rf_jurusan jr', 'jr.kode_jurusan=ak.kode_jurusan')
 		->join('tb_akd_rf_sekolah sk', 'sk.kode_sekolah=ak.kode_sekolah')
