@@ -32,21 +32,21 @@
 						</tr>
 						<tr>
 							<th>Jenjang</th>
-							<td><?php echo $ambil_kelas->nama_jenjang; ?></td>
+							<td><?php echo $detail_siswa->nama_jenjang; ?></td>
 						</tr>
 						<tr>
 							<th>Sekolah</th>
-							<td><?php echo $ambil_kelas->nama_sekolah; ?></td>
+							<td><?php echo $detail_siswa->nama_sekolah; ?></td>
 						</tr>
 							<?php
-								if($ambil_kelas->nama_jenjang=="SMA"){
+								if($detail_siswa->nama_jenjang=="SMA"){
 									echo "<tr><th>Jurusan</th>
-									<td>".$ambil_kelas->nama_jurusan."</td></tr>";
+									<td>".$detail_siswa->nama_jurusan."</td></tr>";
 								}
 							?>
 						<tr>
 							<th>Kelas</th>
-							<td><?php echo $ambil_kelas->nama_kelas; ?></td>
+							<td><?php echo $detail_siswa->nama_kelas; ?></td>
 						</tr>
 						<tr>
 							<th>Angkatan</th>
