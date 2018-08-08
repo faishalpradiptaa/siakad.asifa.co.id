@@ -82,24 +82,12 @@
 					<span class="caret caret-tp hidden-xs"></span>
 				</a>
 				<ul class="dropdown-menu list-group dropdown-persist w250" role="menu">
-					<li class="dropdown-header clearfix">
-						<div class="pull-left ml10">
-							<div class="btn-group" style="width: 100px;">
-								<button type="button" class="multiselect dropdown-toggle btn btn-default btn-sm" title="Online" style="width: 100px;">Online</button>
-							</div>
-						</div>
-						<div class="pull-left ml10">
-							<div class="btn-group" style="width: 100px;">
-								<button type="button" class="multiselect dropdown-toggle btn btn-default btn-sm" title="Siswa" style="width: 100px;">Siswa</button>
-							</div>
-						</div>
-					</li>
 					<li class="list-group-item">
-						<a href="<?php echo site_url('setting#tab-password')?>" class="animated animated-short fadeInUp">
+						<a href="<?php echo site_url('setting#tab-password')?>">
 							<span class="fa fa-gear"></span> Ganti Password </a>
 					</li>
 					<li class="list-group-item">
-						<a href="<?php echo site_url('logout')?>" class="animated animated-short fadeInUp">
+						<a href="<?php echo site_url('logout')?>">
 							<span class="fa fa-power-off"></span> Logout </a>
 					</li>
 				</ul>
