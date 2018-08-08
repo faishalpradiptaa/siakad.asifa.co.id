@@ -10,7 +10,7 @@ class mod_siswa extends MY_Model
 	{
 		$thn_ajaran = $thn_ajaran ? $thn_ajaran : THN_AJARAN;
 		return $this->db
-			->select('ak.*, sw.*, ag.nama_agama, jj.nama_jenjang, kt.nama_kota as kota_lahir, st.nama_status, sk.nama_sekolah, jr.nama_jurusan, kl.nama_kelas, gr.nama as nama_wali_kelas, sk.kepsek, sk.nip_kepsek')
+			->select('ak.*, sw.no_induk,sw.nisn,sw.jk,sw.nama,sw.tgl_lahir,sw.alamat,sw.nama_ayah,sw.telp_ayah,sw.nama_ibu,sw.telp_ibu,sw.telp,sw.angkatan,sw.email, ag.nama_agama, jj.nama_jenjang, kt.nama_kota as kota_lahir, st.nama_status, sk.nama_sekolah, jr.nama_jurusan, kl.nama_kelas, gr.nama as nama_wali_kelas, sk.kepsek, sk.nip_kepsek')
 			->join('tb_akd_rf_siswa sw', 'sw.no_induk=ak.no_induk')
 			->join('tb_app_rf_status st', 'st.kode_status = sw.status_akademis')
 			->join('tb_akd_rf_jenjang jj', 'jj.kode_jenjang = ak.kode_jenjang')
