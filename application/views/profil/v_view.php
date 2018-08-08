@@ -32,19 +32,21 @@
 						</tr>
 						<tr>
 							<th>Jenjang</th>
-							<td><?php echo $ambil_kelas->nama_jenjang; ?></td>
+							<td><?php echo $detail_siswa->nama_jenjang; ?></td>
 						</tr>
 						<tr>
 							<th>Sekolah</th>
-							<td><?php echo $ambil_kelas->nama_sekolah; ?></td>
+							<td><?php echo $detail_siswa->nama_sekolah; ?></td>
 						</tr>
-						<tr>
-							<th>Jurusan</th>
-							<td><?php echo $ambil_kelas->nama_jurusan; ?></td>
-						</tr>
+							<?php
+								if($detail_siswa->nama_jenjang=="SMA"){
+									echo "<tr><th>Jurusan</th>
+									<td>".$detail_siswa->nama_jurusan."</td></tr>";
+								}
+							?>
 						<tr>
 							<th>Kelas</th>
-							<td><?php echo $ambil_kelas->nama_kelas; ?></td>
+							<td><?php echo $detail_siswa->nama_kelas; ?></td>
 						</tr>
 						<tr>
 							<th>Angkatan</th>
@@ -59,7 +61,7 @@
 	<div class="col-md-8">
 
 		<div class="panel">
-		
+
 			<ul class="nav nav-tabs nav-justified">
 				<li class="active"> <a class="fw600" href="#tab-identitas" data-toggle="tab"> <i class="glyphicons glyphicons-user"></i> Data Pribadi</a></li>
 				<li class=""> <a class="fw600" href="#tab-orangtua" data-toggle="tab"><i class="glyphicons glyphicons-parents"></i> Orang Tua</a></li>

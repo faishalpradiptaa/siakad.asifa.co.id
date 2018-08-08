@@ -3027,7 +3027,7 @@
 }
 .admin-form .panel-info > .panel-heading {
   border-top-color: #4CAF50;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 .admin-form .panel-info > .panel-heading:before {
   background-color: #4fc1e9;
