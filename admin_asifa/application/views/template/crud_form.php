@@ -1,5 +1,5 @@
 <?php if ($is_ajax) { ?>
-<div class="modal-header"> // Halaman edit form
+<div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 	<h4 class="modal-title" ><?php echo ($id) ? 'Ubah' : 'Tambah'; echo ' '.$this->title; ?> </h4>
 </div>
@@ -342,7 +342,7 @@
 		if ($is_switch) echo "$('.button-switch').bootstrapSwitch();";
 		if ($is_select) echo "$('.select2').select2();";
 	?>
-	
+
 	function simpan_ajax(mode)
 	{
 		if (typeof beforeSave == 'function') beforeSave();
