@@ -110,7 +110,7 @@
                       <label for="password" class="field prepend-icon">
                         <input type="password" name="user_password" id="password" class="gui-input" placeholder="Masukkan password" required>
                         <label for="password" class="field-icon">
-                          <i class="fa fa-lock"></i>
+                          <i class="fa fa-lock">gakga</i>
                         </label>
                       </label>
                     </div>
