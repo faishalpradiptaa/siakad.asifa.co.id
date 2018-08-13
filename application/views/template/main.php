@@ -286,14 +286,7 @@
 
 		}
 
-		$('#toggle_sidemenu_l').click(function(e){
-		  e.stopPropagation();
-		 $('#').toggleClass('show-menu');
-		});
 
-		$('#sidebar_left').click(function(e){
-		    e.stopPropagation();
-		});
 
 		$(window).on("resize", function (e) { //mobile only function
 		        checkScreenSize();
