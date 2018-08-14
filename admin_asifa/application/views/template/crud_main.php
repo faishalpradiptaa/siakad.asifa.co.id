@@ -1,4 +1,4 @@
-<div class="page-content"> // Halaman utama template
+<div class="page-content"> 
 
 	<div class="page-head">
 		<div class="page-title"><h1><?php echo PAGE_TITLE; ?></h1></div>

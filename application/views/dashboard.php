@@ -11,9 +11,9 @@
 					<a href="#" data-ip-modal="#avatarModal">
 						<img width="100%" id="profile_picture"
 						src="<?php
-						$src=base_url()."/assets/img/avatars/".NO_INDUK.".png";
+						$src=base_url()."/assets/img/avatars/".NO_INDUK.".jpg";
 						if(@getimagesize($src)) {
-							echo base_url()."/assets/img/avatars/".NO_INDUK.".png";
+							echo $src;
 						}else{
 							echo base_url()."/assets/img/avatars/placeholder.png";
 						} ?>"

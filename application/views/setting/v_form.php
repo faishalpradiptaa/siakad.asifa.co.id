@@ -43,7 +43,7 @@
 									<th>Alamat</th>
 									<td>
 										<div class="row"><div class="col-md-10">
-											<input type="text" class="form-control" name="alamat" required value="<?php echo $this->detail_siswa->alamat; ?>">
+											<input type="text" class="form-control" name="alamat" value="<?php echo $this->detail_siswa->alamat; ?>">
 										</div></div>
 									</td>
 								</tr>
@@ -51,7 +51,7 @@
 									<th>Telp</th>
 									<td>
 										<div class="row"><div class="col-md-5">
-											<input type="text" class="form-control" name="telp" required value="<?php echo $this->detail_siswa->telp; ?>">
+											<input type="text" class="form-control" name="telp" value="<?php echo $this->detail_siswa->telp; ?>">
 										</div></div>
 									</td>
 								</tr>
@@ -59,7 +59,7 @@
 									<th>Email</th>
 									<td>
 										<div class="row"><div class="col-md-8">
-											<input type="email" class="form-control" name="email" required value="<?php echo $this->detail_siswa->email; ?>">
+											<input type="email" class="form-control" name="email" value="<?php echo $this->detail_siswa->email; ?>">
 										</div></div>
 									</td>
 								</tr>
@@ -179,11 +179,11 @@
 				</div>
 			</div>
 		</div>
-		
+
 
 	</form>
 </div>
-	
+
 
 [section name="plugin-css"]
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/custom/plugin/datatable_new/datatables.min.css"/>
@@ -202,4 +202,3 @@
 <script>
 </script>
 [/section]
-

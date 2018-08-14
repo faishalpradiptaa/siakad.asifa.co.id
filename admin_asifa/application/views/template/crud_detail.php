@@ -1,5 +1,5 @@
 
-<div class="modal-header"> // Halaman detail
+<div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 	<h4 class="modal-title">Detail <?php echo $this->title; ?></h4>
 </div>

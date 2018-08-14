@@ -72,9 +72,9 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
 					<img src="<?php
-					$src=base_url()."/assets/img/avatars/".NO_INDUK.".png";
+					$src=base_url()."/assets/img/avatars/".NO_INDUK.".jpg";
 					if(@getimagesize($src)) {
-						echo base_url()."/assets/img/avatars/".NO_INDUK.".png";
+						echo $src;
 					}else{
 						echo base_url()."/assets/img/avatars/placeholder.png";
 					} ?>" alt="avatar" class="mw30 br64 mr15">
@@ -286,14 +286,7 @@
 
 		}
 
-		$('#toggle_sidemenu_l').click(function(e){
-		  e.stopPropagation();
-		 $('#').toggleClass('show-menu');
-		});
 
-		$('#sidebar_left').click(function(e){
-		    e.stopPropagation();
-		});
 
 		$(window).on("resize", function (e) { //mobile only function
 		        checkScreenSize();

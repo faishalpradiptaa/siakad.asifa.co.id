@@ -92,3 +92,4 @@ class mod_siswa extends MY_Model
 
 	}
 }
+?>

@@ -1,12 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class setting extends admin_controller {
-	
+
 	public $title = 'Setting & Ubah Profil';
 
 	public function index()
 	{
-		if ($this->input->server('REQUEST_METHOD') == 'POST') 
+		if ($this->input->server('REQUEST_METHOD') == 'POST')
 		{
 			$args = array(
 				'alamat' => $_POST['alamat'],
@@ -29,7 +29,7 @@ class setting extends admin_controller {
 		);
 		$this->load->template('setting/v_form', $pack);
 	}
-	
 
-	
+
+
 }
