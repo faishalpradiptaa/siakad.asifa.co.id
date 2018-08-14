@@ -17,13 +17,13 @@
 
   #customers tr:nth-child(even){background-color: #f2f2f2;}
 
-  #customers tr:hover {background-color: #3b3f4f;}
+  #customers tr:hover {background-color: #e5e5e5;}
 
   #customers th {
       padding-top: 10px;
       padding-bottom: 10px;
       text-align: center;
-      background-color: #dddd;
+      background-color: #3b3f4f;
       color: white;
   }
 
