@@ -23,7 +23,7 @@
 					<div class="panel-body" style="overflow: auto; height: 500px; width: auto;padding:0">
 						<div class="tab-content pn br-n">
 							<div id="tab-tanggungan" class="tab-pane active">
-								<div class="total_tagihan  visible-xs visible-sm">
+								<div class="total_tagihan  visible-xs">
 									<table role="table" id="customers">
 										<thead role="rowgroup">
 										</thead>
@@ -81,7 +81,7 @@
 								</div>
 							</div>
 							<div id="tab-pembayaran" class="tab-pane">
-								<div  class="total_pembayaran visible-xs visible-sm">
+								<div  class="total_pembayaran visible-xs">
 									<table role="table" id="customers">
 										<thead role="rowgroup">
 											<tr>
