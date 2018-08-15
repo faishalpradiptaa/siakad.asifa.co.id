@@ -285,31 +285,6 @@
 			}
 
 		}
-
-
-
-		$(window).on("resize", function (e) { //mobile only function
-		        checkScreenSize();
-		    });
-
-		    checkScreenSize();
-
-		    function checkScreenSize(){
-		        var newWindowWidth = $(window).width();
-		        if (newWindowWidth < 481) {
-							$('body,html').click(function(e){
-									$('#tutup span').trigger('click');
-
-								});
-		        	}
-		        else
-		        {
-		            //nothing
-		        }
-		    }
-
-
-
 		var fixed = document.getElementById('sidebar_left');
 
 		fixed.addEventListener('touchmove', function(e) {
