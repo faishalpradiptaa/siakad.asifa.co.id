@@ -28,7 +28,7 @@
 										<thead role="rowgroup">
 										</thead>
 										<tbody role="rowgroup">
-												<tr role="row" style="background-color: red">
+												<tr role="row">
 												<?php foreach($tagihan as $row) if(strtolower($row->status_tagihan) <> 'lunas' || $row->tanggungan)
 													{
 														$total += $row->tanggungan;
@@ -61,7 +61,13 @@
 									    <tr role="row">
 									      <td role="cell"><?php echo $row->kode_tagihan; ?></td>
 									      <td role="cell"><?php echo $row->nama_jenis; ?></td>
-									      <td role="cell"><?php echo $row->tipe_jenis == 'per_bulan' ? $bulan[(int)date('m', strtotime($row->periode))].' '.date('Y', strtotime($row->periode)) : $row->periode; ?></td>
+									      <td role="cell"><?php
+												if($row->tipe_jenis=='sekali_bayar'){
+													echo "-";
+												}else{
+													echo $row->tipe_jenis == 'per_bulan' ? $bulan[(int)date('m', strtotime($row->periode))].' '.date('Y', strtotime($row->periode)) : $row->periode;
+												}
+												?></td>
 									      <td role="cell">Rp<?php echo number_format($row->tanggungan,0,',','.'); ?>,00</td>
 									    </tr>
 											<tr></tr>
@@ -85,7 +91,7 @@
 											</tr>
 											</thead>
 											<tbody role="rowgroup">
-												<tr role="row" style="background-color: blue">
+												<tr role="row">
 												<?php
 													$i=0;
 													$total = 0;
@@ -122,7 +128,13 @@
 									    <tr role="row">
 									      <td role="cell"><?php echo $row->kode_pembayaran; ?></td>
 									      <td role="cell"><?php echo $row->nama_jenis; ?></td>
-									      <td role="cell"><?php echo $row->tipe_jenis == 'per_bulan' ? $bulan[(int)date('m', strtotime($row->periode))].' '.date('Y', strtotime($row->periode)) : $row->periode; ?></td>
+												<td role="cell"><?php
+												if($row->tipe_jenis=='sekali_bayar'){
+													echo "-";
+												}else{
+													echo $row->tipe_jenis == 'per_bulan' ? $bulan[(int)date('m', strtotime($row->periode))].' '.date('Y', strtotime($row->periode)) : $row->periode;
+												}
+												?></td>
 									      <td role="cell"><?php echo ucwords($row->jenis_transaksi); ?></td>
 												<td role="cell"><?php echo date('d/m/Y', strtotime($row->tgl_bayar)); ?></td>
 												<td role="cell">Rp<?php echo number_format($row->bayar,0,',','.'); ?>,00</td>
