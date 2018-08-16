@@ -28,12 +28,13 @@
 										<thead role="rowgroup">
 										</thead>
 										<tbody role="rowgroup">
-												<tr role="row" style="background-color: red">
+												<tr role="row"> </tr>
+												<tr role="row" style="background-color: #bf3b3b">
 												<?php foreach($tagihan as $row) if(strtolower($row->status_tagihan) <> 'lunas' || $row->tanggungan)
 													{
 														$total += $row->tanggungan;
 													}?>
-													<td role="cell"><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></td>
+													<td role="cell"><b style="color:white">Rp<?php echo number_format($total,0,',','.'); ?>,00</b></td>
 												</tr>
 										</tbody>
 									</table>
@@ -90,8 +91,9 @@
 											<th role="columnheader">Total</th>
 											</tr>
 											</thead>
+											<tr role="row"> </tr>
 											<tbody role="rowgroup">
-												<tr role="row" style="background-color: blue">
+												<tr role="row" style="background-color: #4a89dc">
 												<?php
 													$i=0;
 													$total = 0;
@@ -99,7 +101,7 @@
 													{
 														$total += $row->bayar;
 													}?>
-													<td role="cell" ><b>Rp<?php echo number_format($total,0,',','.'); ?>,00</b></td>
+													<td role="cell" ><b style="color:white">Rp<?php echo number_format($total,0,',','.'); ?>,00</b></td>
 												</tr>
 											</tbody>
 									</table>

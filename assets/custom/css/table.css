@@ -6,18 +6,20 @@
       font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
       border-collapse: collapse;
       width: 100%;
+      background-color: #ffffff;
   }
 
   #customers td, #customers th {
       border: 1px solid #DDDD;
       padding-top: 2px;
       padding-bottom: 2px;
-      border-radius:1px;
+      border-radius:0px;
   }
+
 
   #customers tr:nth-child(even){background-color: #f2f2f2;}
 
-  #customers tr:hover {background-color: #e5e5e5;}
+  #customers tr:hover {background-color: white;}
 
   #customers th {
       padding-top: 10px;
@@ -27,15 +29,28 @@
       color: white;
   }
 
+
 	@media
 	  only screen
     and (max-width: 760px), (min-device-width: 768px)
     and (max-device-width: 1024px)  {
 
+      #customers {
+          font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+          background-color: #4caf50;
+      }
+
+        #total_tagihan{
+          color:white;
+        }
 		/* Force table to not be like tables anymore */
 		.tabel_tagihan table, thead, tbody, th, td, tr {
 			display: block;
-      color: white;
+      color: #3b3f4f;
+      font-weight: 500;
+
 		}
 
 		/* Hide table headers (but not display: none;, for accessibility) */
@@ -50,13 +65,13 @@
     }
 
     .tabel_tagihan tr:nth-child(odd) {
-      background: maroon;
+      background: white;
     }
 
 		.tabel_tagihan td {
 			/* Behave  like a "row" */
 			border: none;
-			border-bottom: 1px solid #eee;
+			border-bottom: 1px solid #3b3f4f;
 			position: relative;
 			padding-left: 50%;
 		}
@@ -83,6 +98,8 @@
 
     .tabel_pembayaran table, thead, tbody, th, td, tr {
       display: block;
+      color: #3b3f4f;
+      font-weight: 500;
     }
 
     /* Hide table headers (but not display: none;, for accessibility) */
@@ -97,7 +114,7 @@
     }
 
     .tabel_pembayaran tr:nth-child(odd) {
-      background: teal;
+      background: white;
     }
 
     .tabel_pembayaran td {
@@ -117,19 +134,20 @@
       width: 45%;
       padding-right: 10px;
       white-space: nowrap;
-      color: white;
+      color: #3b3f4f;
+      font-weight: 500;;
     }
 
     /*
     Label the data
     You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
     */
-    .tabel_pembayaran td:nth-of-type(1):before { content: "Kode"; font-weight: bold; color: white}
-    .tabel_pembayaran td:nth-of-type(2):before { content: "Jenis"; font-weight: bold; color: white}
-    .tabel_pembayaran td:nth-of-type(3):before { content: "Periode"; font-weight: bold; color: white}
-    .tabel_pembayaran td:nth-of-type(4):before { content: "Transaksi"; font-weight: bold; color: white}
-    .tabel_pembayaran td:nth-of-type(5):before { content: "Tanggal Bayar"; font-weight: bold; color: white}
-    .tabel_pembayaran td:nth-of-type(6):before { content: "Nominal"; font-weight: bold; color: white}
+    .tabel_pembayaran td:nth-of-type(1):before { content: "Kode"; font-weight: bold;}
+    .tabel_pembayaran td:nth-of-type(2):before { content: "Jenis"; font-weight: bold;}
+    .tabel_pembayaran td:nth-of-type(3):before { content: "Periode"; font-weight: bold;}
+    .tabel_pembayaran td:nth-of-type(4):before { content: "Transaksi"; font-weight: bold;}
+    .tabel_pembayaran td:nth-of-type(5):before { content: "Tanggal Bayar"; font-weight: bold;}
+    .tabel_pembayaran td:nth-of-type(6):before { content: "Nominal"; font-weight: bold;}
 
     .total_tagihan table, thead, tbody, th, td, tr {
       display: block;
@@ -174,7 +192,7 @@
     Label the data
     You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
     */
-    .total_tagihan td:nth-of-type(1):before { content: "Total Tagihan"; font-weight: bold}
+    .total_tagihan td:nth-of-type(1):before { content: "Total Tagihan"; font-weight: bold; color:white;}
 
     .total_pembayaran table, thead, tbody, th, td, tr {
       display: block;
@@ -219,5 +237,5 @@
     Label the data
     You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
     */
-    .total_pembayaran td:nth-of-type(1):before { content: "Total Pembayaran"; font-weight: bold}
+    .total_pembayaran td:nth-of-type(1):before { content: "Total Pembayaran"; font-weight: bold; color:white;}
 	}
