@@ -208,8 +208,7 @@
   <script type="text/javascript">
     function saveUP() {
         var u = document.getElementById("username").value;
-        var p = document.getElementById("password").value;
-        Android.saveUP(u,p);
+        Android.saveUP(u);
     }
   </script>
 
