@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class pengumuman extends CI_Controller {
+class pengumuman extends MY_Controller {
 
 	public function index($id)
 	{
